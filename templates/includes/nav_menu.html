@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="{% url 'shop:product_list' %}">
+            DiplomaShop
+        </a>
+
+        <div class="ms-auto d-flex gap-2">
+
+            {% if user.is_authenticated %}
+                <span class="text-white me-2">{{ user.username }}</span>
+
+                <a href="{% url 'cart:cart_detail' %}" class="btn btn-warning btn-sm">
+                    Корзина ({{ cart_count }})
+                </a>
+
+                <a href="{% url 'orders:user_orders' %}" class="btn btn-outline-light btn-sm">
+                    Мои заказы
+                </a>
+
+                <a href="{% url 'accounts:profile' %}" class="btn btn-outline-light btn-sm">
+                    Профиль
+                </a>
+
+                <form action="{% url 'logout' %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-light btn-sm">
+                        Выход
+                    </button>
+                </form>
+
+            {% else %}
+
+                <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">
+                    Вход
+                </a>
+
+                <a href="{% url 'accounts:register' %}" class="btn btn-success btn-sm">
+                    Регистрация
+                </a>
+                
+            {% endif %}
+
+        </div>
+
+{#        <div class="ms-auto">#}
+{#            <a href="#" class="btn btn-outline-light btn-sm">RU</a>#}
+{#            <a href="#" class="btn btn-outline-light btn-sm">UA</a>#}
+{#            <a href="#" class="btn btn-outline-light btn-sm">EN</a>#}
+{#       </div>#}
+    </div>
+</nav>

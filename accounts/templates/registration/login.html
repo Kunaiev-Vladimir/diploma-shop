@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="max-width: 400px;">
+    <h2 class="mb-4 text-center">Вход</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                Неверный логин или пароль
+            </div>
+        {% endif %}
+
+        <div class="mb-3">
+            <label>Логин</label>
+            <input type="text" name="username" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label>Пароль</label>
+            <input type="password" name="password" class="form-control">
+        </div>
+
+        <button class="btn btn-primary w-100">Войти</button>
+    </form>
+</div>
+{% endblock %}

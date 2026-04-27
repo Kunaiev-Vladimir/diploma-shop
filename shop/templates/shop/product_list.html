@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Товары | DiplomaShop{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="mb-4">Товары</h2>
+
+    <div class="row g-4">
+        {% for product in products %}
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text text-muted">
+                            {{ product.description|truncatewords:25 }}
+                        </p>
+
+                        <div class="mt-auto">
+                            <p class="fw-bold fs-5 mb-3">
+                                {{ product.price }} грн
+                            </p>
+{#                            <a href="{% url 'shop:product_detail' product.slug %}" class="btn btn-primary w-100">#}
+{#                                Подробнее#}
+{#                            </a>#}
+
+                            <div class="d-grid gap-2">
+                                <a href="{% url 'shop:product_detail' product.slug %}" class="btn btn-primary">
+                                    Подробнее
+                                </a>
+
+                                <a href="{% url 'cart:cart_add' product.id %}" class="btn btn-success">
+                                    В корзину
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>Нет товаров</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
