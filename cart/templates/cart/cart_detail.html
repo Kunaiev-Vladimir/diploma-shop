@@ -12,7 +12,8 @@
                 <tr>
                     <th>Товар</th>
                     <th>Количество</th>
-                    <th>Цена</th>
+                    <th>Стоимость</th>
+                    <th>Всего</th>
                     <th></th>
                 </tr>
             </thead>
@@ -20,7 +21,28 @@
                 {% for product in products %}
                     <tr>
                         <td>{{ product.name }}</td>
-                        <td>{{ product.quantity }}</td>
+{#                        <td>{{ product.quantity }}</td>#}
+
+                        <td>
+                            <form method="post" action="{% url 'cart:update_cart' product.id %}">
+                                {% csrf_token %}
+
+                                <input type="number"
+                                       name="quantity"
+                                       value="{{ product.quantity }}"
+                                       min="1"
+                                       class="form-control"
+                                       style="width: 80px;"
+                                       onchange="this.form.submit()">
+
+{#                                <button type="submit" class="btn btn-sm btn-primary">#}
+{#                                    Обновить#}
+{#                                </button>#}
+                            </form>
+                        </td>
+
+                        <td>{{ product.price }} грн</td>
+
                         <td>{{ product.total_price }} грн</td>
                         <td>
                             <a href="{% url 'cart:cart_remove' product.id %}" class="btn btn-danger btn-sm">

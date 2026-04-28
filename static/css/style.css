@@ -1,0 +1,113 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.header-hero {
+    background: linear-gradient(135deg, #212529, #495057);
+    color: white;
+    padding: 50px 0;
+}
+
+.header-hero h1 {
+    font-weight: 700;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.navbar .btn {
+    border-radius: 20px;
+}
+
+footer .row {
+    row-gap: 15px;
+}
+
+footer .btn {
+    border-radius: 20px;
+    border: none;
+    transition: 0.3s;
+}
+
+footer .btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+footer input {
+    border-radius: 20px;
+}
+
+footer input:focus {
+    box-shadow: none;
+    border-color: #ffc107;
+}
+
+.social-btn {
+    width: 60px !important;
+    height: 60px !important;
+    background-color: #ffffff !important;
+    color: #212529 !important;
+    border-radius: 12px !important;
+    font-size: 28px !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    color: #000 !important;
+}
+
+
+.social-btn.facebook {
+    background: #1877F2 !important;
+    color: white !important;
+}
+
+.social-btn.instagram {
+    background: #E1306C !important;
+    color: white !important;
+}
+
+.social-btn.twitter {
+    background: #1DA1F2 !important;
+    color: white !important;
+}
+
+.social-btn.linkedin {
+    background: #0A66C2 !important;
+    color: white !important;
+}
+
+.footer-social-btn {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-social-btn:hover {
+    background-color: #ffc107;
+    color: black;
+}

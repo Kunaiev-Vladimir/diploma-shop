@@ -1,51 +1,85 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="{% url 'shop:product_list' %}">
-            DiplomaShop
+        <a class="navbar-brand" href="{% url 'shop:product_list' %}">
+            Shop
         </a>
 
-        <div class="ms-auto d-flex gap-2">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            {% if user.is_authenticated %}
-                <span class="text-white me-2">{{ user.username }}</span>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
 
-                <a href="{% url 'cart:cart_detail' %}" class="btn btn-warning btn-sm">
-                    Корзина ({{ cart_count }})
-                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'shop:product_list' %}">
+                        Главная
+                    </a>
+                </li>
 
-                <a href="{% url 'orders:user_orders' %}" class="btn btn-outline-light btn-sm">
-                    Мои заказы
-                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contacts:contacts' %}">
+                        Контакты
+                    </a>
+                </li>
 
-                <a href="{% url 'accounts:profile' %}" class="btn btn-outline-light btn-sm">
-                    Профиль
-                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart:cart_detail' %}">
+                        Корзина
+                        <span class="badge bg-warning text-dark">
+                            {{ cart_count }}
+                        </span>
+                    </a>
+                </li>
 
-                <form action="{% url 'logout' %}" method="post" class="d-inline">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-outline-light btn-sm">
-                        Выход
-                    </button>
-                </form>
+                {% if user.is_authenticated %}
 
-            {% else %}
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'orders:user_orders' %}">
+                            Мои заказы
+                        </a>
+                    </li>
 
-                <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">
-                    Вход
-                </a>
+{#                    <li class="nav-item">#}
+{#                      <a class="nav-link" href="{% url 'accounts:profile' %}">#}
+{#                            Профиль#}
+{#                        </a>#}
+{#                    </li>#}
 
-                <a href="{% url 'accounts:register' %}" class="btn btn-success btn-sm">
-                    Регистрация
-                </a>
-                
-            {% endif %}
+                    <!-- 👤 Имя пользователя -->
+                    <li class="nav-item me-2">
+                        <a href="{% url 'accounts:profile' %}" class="btn btn-light btn-sm fw-semibold">
+                            👤 {{ user.username }}
+                        </a>
+                    </li>
 
+                    <li class="nav-item ms-lg-2">
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-light btn-sm">
+                                Выйти
+                            </button>
+                        </form>
+                    </li>
+
+                {% else %}
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm me-2" href="{% url 'login' %}">
+                            Войти
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-warning btn-sm" href="{% url 'accounts:register' %}">
+                            Регистрация
+                        </a>
+                    </li>
+
+                {% endif %}
+
+            </ul>
         </div>
-
-{#        <div class="ms-auto">#}
-{#            <a href="#" class="btn btn-outline-light btn-sm">RU</a>#}
-{#            <a href="#" class="btn btn-outline-light btn-sm">UA</a>#}
-{#            <a href="#" class="btn btn-outline-light btn-sm">EN</a>#}
-{#       </div>#}
     </div>
 </nav>

@@ -11,22 +11,35 @@
             <div class="card mb-3 shadow-sm">
                 <div class="card-body">
                     <h5>Заказ №{{ order.id }}</h5>
+
                     <p class="text-muted">
                         Дата: {{ order.created_at|date:"d.m.Y H:i" }}
                     </p>
 
-                    <ul>
+                    <p>
+                        Статус:
+                        {% if order.is_paid %}
+                            <span class="badge bg-success">Оплачен</span>
+                        {% else %}
+                            <span class="badge bg-danger">Не оплачен</span>
+                        {% endif %}
+                    </p>
+
+                    <ul class="list-group mb-3">
                         {% for item in order.items.all %}
-                            <li>
-                                {{ item.product.name }} — 
-                                {{ item.quantity }} шт — 
-                                {{ item.price }} грн
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>
+                                    {{ item.product.name }} — {{ item.quantity }} шт
+                                </span>
+                                <span>
+                                    {{ item.price }} грн
+                                </span>
                             </li>
                         {% endfor %}
                     </ul>
 
-                    <p class="fw-bold">
-                        Сумма: {{ order.total_price }} грн
+                    <p class="fw-bold mb-0">
+                        Сумма: {{ order.get_total_price }} грн
                     </p>
                 </div>
             </div>

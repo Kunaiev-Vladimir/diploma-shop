@@ -30,8 +30,9 @@ def cart_add(request, product_id):
         cart[str(product_id)] = 1
 
     request.session['cart'] = cart
+    request.session.modified = True
 
-    return redirect('cart:cart_detail')
+    return redirect(request.META.get('HTTP_REFERER', 'shop:product_list'))
 
 
 def cart_remove(request, product_id):
@@ -41,5 +42,17 @@ def cart_remove(request, product_id):
         del cart[str(product_id)]
 
     request.session['cart'] = cart
+
+    return redirect('cart:cart_detail')
+
+def update_cart(request, product_id):
+    if request.method == 'POST':
+        quantity = int(request.POST.get('quantity', 1))
+        cart = request.session.get('cart', {})
+
+        if str(product_id) in cart:
+            cart[str(product_id)] = quantity
+
+        request.session['cart'] = cart
 
     return redirect('cart:cart_detail')

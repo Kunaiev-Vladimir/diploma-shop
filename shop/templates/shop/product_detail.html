@@ -21,22 +21,37 @@
         </div>
 
         <div class="col-md-6">
-            <h1>{{ product.name }}</h1>
-            <p class="text-muted">{{ product.category.name }}</p>
+            <h1 class="mb-3">{{ product.name }}</h1>
 
-            <p class="fs-5">{{ product.description }}</p>
+            <p class="text-muted mb-2">
+                Категория: {{ product.category.name }}
+            </p>
 
-            <p class="fw-bold fs-3">
+            <p class="mb-4">
+                {{ product.description }}
+            </p>
+
+            <p class="fw-bold fs-3 text-success mb-3">
                 {{ product.price }} грн
             </p>
 
-            <p>
-                На складе: {{ product.stock }}
+            <p class="mb-4">
+                {% if product.stock > 0 %}
+                    <span class="text-success">В наличии: {{ product.stock }}</span>
+                {% else %}
+                    <span class="text-danger">Нет в наличии</span>
+                {% endif %}
             </p>
-            
-            <a href="{% url 'cart:cart_add' product.id %}" class="btn btn-success btn-lg">
-                Добавить в корзину
-            </a>
+
+            {% if product.stock > 0 %}
+                <a href="{% url 'cart:cart_add' product.id %}" class="btn btn-success btn-lg w-100">
+                    🛒 Добавить в корзину
+                </a>
+            {% else %}
+                <button class="btn btn-secondary btn-lg w-100" disabled>
+                    Нет в наличии
+                </button>
+            {% endif %}
 
 {#            <button class="btn btn-success btn-lg">#}
 {#                Добавить в корзину#}
