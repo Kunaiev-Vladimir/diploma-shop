@@ -4,48 +4,100 @@
 
 {% block content %}
 <div class="container py-5">
-    <h2 class="mb-4">Мои заказы</h2>
+{#    <h2 class="mb-4">Мои заказы</h2>#}
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="mb-1">Мои заказы</h2>
+            <p class="text-muted mb-0">История ваших покупок в магазине</p>
+        </div>
+
+        <a href="{% url 'shop:product_list' %}" class="btn btn-outline-primary">
+            Продолжить покупки
+        </a>
+        </div>
+    </div>
 
     {% if orders %}
         {% for order in orders %}
-            <div class="card mb-3 shadow-sm">
+            <div class="card mb-3 shadow-sm border-0 rounded-4">
                 <div class="card-body">
-                    <h5>Заказ №{{ order.id }}</h5>
 
-                    <p class="text-muted">
-                        Дата: {{ order.created_at|date:"d.m.Y H:i" }}
-                    </p>
+                    <div class="d-flex justify-content-between align-items-start mb-3">
 
-                    <p>
-                        Статус:
-                        {% if order.is_paid %}
-                            <span class="badge bg-success">Оплачен</span>
-                        {% else %}
-                            <span class="badge bg-danger">Не оплачен</span>
-                        {% endif %}
-                    </p>
+                        <div>
+                            <h5 class="mb-1">Заказ №{{ order.id }}</h5>
+                            <small class="text-muted">
+                                {{ order.created_at|date:"d.m.Y H:i" }}
+                            </small>
+                        </div>
+
+                        <div class="text-end">
+                            {% if order.is_paid %}
+                                <span class="badge bg-success">Оплачен</span>
+                            {% else %}
+                                <span class="badge bg-warning text-dark">Ожидает оплаты</span>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+
 
                     <ul class="list-group mb-3">
+                        
                         {% for item in order.items.all %}
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>
-                                    {{ item.product.name }} — {{ item.quantity }} шт
-                                </span>
-                                <span>
-                                    {{ item.price }} грн
-                                </span>
+                            
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <div class="fw-semibold">
+                                        {{ item.product.name }}
+                                    </div>
+                                    <small class="text-muted">
+                                        Количество: {{ item.quantity }}
+                                    </small>
+                                </div>
+
+                                <div class="text-end">
+                                    <div class="fw-semibold">
+                                        {{ item.price|floatformat:0 }} грн
+                                    </div>
+                                </div>
                             </li>
+
                         {% endfor %}
                     </ul>
 
-                    <p class="fw-bold mb-0">
-                        Сумма: {{ order.get_total_price }} грн
-                    </p>
+                    <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+
+                        <span class="fw-semibold">Итого:</span>
+
+                        <span class="fs-5 fw-bold text-primary">
+                            {{ order.get_total_price|floatformat:0 }} грн
+                        </span>
+
+                    </div>
+
                 </div>
             </div>
         {% endfor %}
     {% else %}
-        <p>У вас пока нет заказов</p>
+        
+        <div class="text-center py-5">
+
+            <h5 class="mb-3">У вас пока нет заказов</h5>
+
+            <p class="text-muted">
+                Перейдите в каталог и выберите товары
+            </p>
+
+            <a href="{% url 'shop:product_list' %}" class="btn btn-primary mt-3">
+                Перейти в магазин
+            </a>
+
+        </div>
+
     {% endif %}
 </div>
 {% endblock %}

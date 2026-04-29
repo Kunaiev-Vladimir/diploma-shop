@@ -11,6 +11,9 @@ class Order(models.Model):
     
     def total_price(self):
         return sum(item.price * item.quantity for item in self.items.all())
+    
+    def get_total_price(self):
+        return sum(item.get_total_price() for item in self.items.all())
 
     def __str__(self):
         return f'Заказ №{self.id} — {self.user.username}'
@@ -21,6 +24,9 @@ class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.PositiveIntegerField(default=1)
+    
+    def get_total_price(self):
+        return self.price * self.quantity
 
     def __str__(self):
         return f'{self.product.name} ({self.quantity})'

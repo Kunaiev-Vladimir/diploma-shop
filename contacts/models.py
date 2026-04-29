@@ -89,6 +89,7 @@ class ContactAddress(models.Model):
     city = models.CharField(max_length=100, verbose_name='Город')
     street = models.CharField(max_length=150, verbose_name='Улица')
     address = models.CharField(max_length=255, verbose_name='Полный адрес')
+    phone = models.CharField(max_length=20, blank=True, verbose_name='Телефон магазина')
     #map_url = models.URLField(blank=True, verbose_name='Ссылка на карту')
     map_url = models.TextField(blank=True, verbose_name='Ссылка на карту')
 
