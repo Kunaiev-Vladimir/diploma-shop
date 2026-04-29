@@ -111,3 +111,31 @@ footer input:focus {
     background-color: #ffc107;
     color: black;
 }
+
+.menu-product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.menu-product-image {
+    height: 180px;
+    object-fit: cover;
+}
+
+.menu-product-title {
+    min-height: 48px;
+}
+
+.menu-product-description {
+    min-height: 60px;
+}
+
+.menu-product-price {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+}
