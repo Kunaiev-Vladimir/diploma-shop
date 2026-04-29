@@ -34,9 +34,9 @@ class SocialLinkInline(admin.TabularInline):
 class ContactInfoAdmin(admin.ModelAdmin):
     list_display = ('title',)
     inlines = [
-        ContactEmailInline,
-        ContactPhoneInline,
         ContactAddressInline,
+        ContactPhoneInline,
+        ContactEmailInline,
         SocialLinkInline,
     ]
 

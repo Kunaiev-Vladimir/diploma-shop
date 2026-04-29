@@ -81,16 +81,23 @@ class ContactPhone(models.Model):
 
 
 class ContactAddress(models.Model):
-    contact_info = models.ForeignKey(ContactInfo, on_delete=models.CASCADE, related_name='addresses')
+    contact_info = models.ForeignKey(
+        ContactInfo,
+        on_delete=models.CASCADE,
+        related_name='addresses'
+    )
     city = models.CharField(max_length=100, verbose_name='Город')
-    address = models.CharField(max_length=255, verbose_name='Адрес')
+    street = models.CharField(max_length=150, verbose_name='Улица')
+    address = models.CharField(max_length=255, verbose_name='Полный адрес')
+    #map_url = models.URLField(blank=True, verbose_name='Ссылка на карту')
+    map_url = models.TextField(blank=True, verbose_name='Ссылка на карту')
 
     class Meta:
         verbose_name = 'Адрес'
         verbose_name_plural = 'Адреса'
 
     def __str__(self):
-        return f'{self.city}: {self.address}'
+        return f'{self.city}: {self.street}'
 
 
 class SocialLink(models.Model):

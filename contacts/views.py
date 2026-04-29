@@ -13,6 +13,7 @@ def contacts_view(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Сообщение успешно отправлено!')
             return redirect('contacts:contacts')
     else:
         form = ContactMessageForm()
