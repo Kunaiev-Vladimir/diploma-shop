@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<form action="{% url 'set_language' %}" method="post" class="d-flex gap-2 align-items-center">
+    {% csrf_token %}
+
+    <input name="next" type="hidden" value="{{ request.get_full_path }}">
+
+    {% for language in active_languages %}
+        <button type="submit"
+                name="language"
+                value="{{ language.code }}"
+                class="btn btn-sm btn-outline-light {% if request.LANGUAGE_CODE|slice:':2' == language.code %}active-lang{% endif %}">
+            {{ language.flag }} {{ language.code|upper }}
+
+        </button>
+    {% empty %}
+        <span class="text-white small">{% trans "Нет языков" %}</span>
+    {% endfor %}
+</form>

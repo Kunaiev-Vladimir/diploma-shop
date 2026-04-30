@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Регистрация{% endblock %}
+{% block title %}{% trans "Регистрация" %}{% endblock %}
 
 {% block content %}
 <div class="container py-5" style="max-width: 400px;">
-    <h2 class="mb-4 text-center">Регистрация</h2>
+    <h2 class="mb-4 text-center">{% trans "Регистрация" %}</h2>
 
     <form method="post">
         {% csrf_token %}
@@ -22,7 +23,7 @@
         {% endfor %}
 
         <button class="btn btn-success w-100">
-            Зарегистрироваться
+            {% trans "Зарегистрироваться" %}
         </button>
     </form>
 </div>

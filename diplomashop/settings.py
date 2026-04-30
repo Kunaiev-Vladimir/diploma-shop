@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 import os
 
+from django.utils.translation import gettext_lazy as _
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,17 +45,20 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'contacts.apps.ContactsConfig',
-    'menu.apps.MenuConfig'
+    'menu.apps.MenuConfig',
+    'languages.apps.LanguagesConfig'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'diplomashop.urls'
@@ -71,6 +76,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'cart.context_processors.cart_count',
                 'contacts.context_processors.contact_info',
+                'languages.context_processors.active_languages',
             ],
         },
     },
@@ -118,6 +124,8 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 
@@ -139,3 +147,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'shop:product_list'
 LOGOUT_REDIRECT_URL = 'shop:product_list'
+
+LANGUAGE_CODE = 'ru'
+
+LANGUAGES = [
+    ('ru', _('Russian')),
+    ('uk', _('Ukrainian')),
+    ('en', _('English')),
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]

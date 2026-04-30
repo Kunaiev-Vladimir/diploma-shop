@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Заказ оформлен" %}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <div class="text-center py-5">
+        <div class="fs-1 mb-3">✅</div>
+
+        <h2 class="fw-bold mb-3">{% trans "Заказ успешно оформлен!" %}</h2>
+
+        <p class="text-muted mb-4">
+            {% trans "Спасибо за покупку. Ваш заказ сохранён в истории заказов." %}
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{% url 'orders:user_orders' %}" class="btn btn-primary">
+                {% trans "Мои заказы" %}
+            </a>
+
+            <a href="{% url 'shop:product_list' %}" class="btn btn-outline-primary">
+                {% trans "Продолжить покупки" %}
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

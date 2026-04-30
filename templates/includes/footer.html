@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <footer class="mt-auto bg-dark text-white py-4">
     <div class="container">
 
@@ -6,7 +8,7 @@
             <!-- Левая часть -->
             <div class="col-md-4 text-center text-md-start">
                 <a href="{% url 'contacts:contacts' %}" class="btn btn-outline-light btn-sm mb-2">
-                    📞 Контакты
+                    📞 {% trans "Контакты" %}
                 </a>
 
                 {% if contact_info %}
@@ -40,30 +42,30 @@
 
                     <a href="{% url 'shop:product_list' %}"
                        class="btn btn-outline-light btn-sm">
-                        Главная
+                        {% trans "Главная" %}
                     </a>
 
                     <a href="{% url 'menu:menu_list' %}"
                        class="btn btn-outline-light btn-sm">
-                        Меню
+                        {% trans "Меню" %}
                     </a>
 
                     <a href="#"
                        class="btn btn-outline-light btn-sm"
                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-                        ↑ Наверх
+                        ↑ {% trans "Наверх" %}
                     </a>
 
                 </div>
 
                 <p class="mb-0">
-                    © 2026 Интернет-магазин. Все права защищены.
+                    © 2026 {% trans "Интернет-магазин. Все права защищены." %}
                 </p>
             </div>
 
             <!-- Правая часть -->
             <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
-                <h6 class="mb-2">Подписка</h6>
+                <h6 class="mb-2">{% trans "Подписка" %}</h6>
 
                 <form method="post"
                       action="{% url 'contacts:subscribe' %}"
@@ -73,7 +75,7 @@
                     <input type="email"
                            name="email"
                            class="form-control"
-                           placeholder="Ваш email"
+                           placeholder="{% trans 'Ваш email' %}"
                            style="max-width: 200px;"
                            required>
 

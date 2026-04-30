@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Мои заказы{% endblock %}
+{% block title %}{% trans "Мои заказы" %}{% endblock %}
 
 {% block content %}
 <div class="container py-5">
@@ -8,12 +9,12 @@
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h2 class="mb-1">Мои заказы</h2>
-            <p class="text-muted mb-0">История ваших покупок в магазине</p>
+            <h2 class="mb-1">{% trans "Мои заказы" %}</h2>
+            <p class="text-muted mb-0">{% trans "История ваших покупок в магазине" %}</p>
         </div>
 
         <a href="{% url 'shop:product_list' %}" class="btn btn-outline-primary">
-            Продолжить покупки
+            {% trans "Продолжить покупки" %}
         </a>
         </div>
     </div>
@@ -26,7 +27,7 @@
                     <div class="d-flex justify-content-between align-items-start mb-3">
 
                         <div>
-                            <h5 class="mb-1">Заказ №{{ order.id }}</h5>
+                            <h5 class="mb-1">{% trans "Заказ" %} №{{ order.id }}</h5>
                             <small class="text-muted">
                                 {{ order.created_at|date:"d.m.Y H:i" }}
                             </small>
@@ -34,15 +35,13 @@
 
                         <div class="text-end">
                             {% if order.is_paid %}
-                                <span class="badge bg-success">Оплачен</span>
+                                <span class="badge bg-success">{% trans "Оплачен" %}</span>
                             {% else %}
-                                <span class="badge bg-warning text-dark">Ожидает оплаты</span>
+                                <span class="badge bg-warning text-dark">{% trans "Ожидает оплаты" %}</span>
                             {% endif %}
                         </div>
 
                     </div>
-
-
 
                     <ul class="list-group mb-3">
                         
@@ -55,7 +54,7 @@
                                         {{ item.product.name }}
                                     </div>
                                     <small class="text-muted">
-                                        Количество: {{ item.quantity }}
+                                        {% trans "Количество" %}: {{ item.quantity }}
                                     </small>
                                 </div>
 
@@ -71,7 +70,7 @@
 
                     <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
 
-                        <span class="fw-semibold">Итого:</span>
+                        <span class="fw-semibold">{% trans "Итого" %}:</span>
 
                         <span class="fs-5 fw-bold text-primary">
                             {{ order.get_total_price|floatformat:0 }} грн
@@ -86,14 +85,14 @@
         
         <div class="text-center py-5">
 
-            <h5 class="mb-3">У вас пока нет заказов</h5>
+            <h5 class="mb-3">{% trans "У вас пока нет заказов" %}</h5>
 
             <p class="text-muted">
-                Перейдите в каталог и выберите товары
+                {% trans "Перейдите в каталог и выберите товары" %}
             </p>
 
             <a href="{% url 'shop:product_list' %}" class="btn btn-primary mt-3">
-                Перейти в магазин
+                {% trans "Перейти в магазин" %}
             </a>
 
         </div>

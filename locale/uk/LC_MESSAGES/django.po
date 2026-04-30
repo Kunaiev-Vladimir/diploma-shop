@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-30 15:14+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+msgid "Редактировать профиль"
+msgstr "Редагувати профіль"
+
+msgid "Сохранить"
+msgstr "Зберегти"
+
+msgid "Профиль"
+msgstr "Профіль"
+
+msgid "Имя пользователя"
+msgstr "Ім'я користувача"
+
+msgid "Номер телефона"
+msgstr "Номер телефону"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Адрес"
+msgstr "Адреса"
+
+msgid "Регистрация"
+msgstr "Реєстрація"
+
+msgid "Зарегистрироваться"
+msgstr "Зареєструватися"
+
+msgid "Корзина"
+msgstr "Кошик"
+
+msgid "Товар"
+msgstr "Товар"
+
+msgid "Количество"
+msgstr "Кількість"
+
+msgid "Стоимость"
+msgstr "Ціна"
+
+msgid "Всего"
+msgstr "Разом"
+
+msgid "Удалить"
+msgstr "Видалити"
+
+msgid "Итого"
+msgstr "Разом"
+
+msgid "Оформить заказ"
+msgstr "Оформити замовлення"
+
+msgid "Корзина пустая"
+msgstr "Кошик порожній"
+
+msgid "Контакты"
+msgstr "Контакти"
+
+msgid "Свяжитесь с нами"
+msgstr "Зв'яжіться з нами"
+
+msgid "Адрес магазина"
+msgstr "Адреса магазину"
+
+msgid "Город"
+msgstr "Місто"
+
+msgid "Улица"
+msgstr "Вулиця"
+
+msgid "Телефон"
+msgstr "Телефон"
+
+msgid "Контактная информация пока не добавлена."
+msgstr "Контактна інформація ще не додана."
+
+msgid "Напишите нам"
+msgstr "Напишіть нам"
+
+msgid "Отправить сообщение"
+msgstr "Надіслати повідомлення"
+
+msgid "Мы в соцсетях"
+msgstr "Ми в соцмережах"
+
+msgid "Russian"
+msgstr "Російська"
+
+msgid "Ukrainian"
+msgstr "Українська"
+
+msgid "English"
+msgstr "Англійська"
+
+msgid "Нет языков"
+msgstr "Немає мов"
+
+msgid "Меню | DiplomaShop"
+msgstr "Меню | DiplomaShop"
+
+msgid "Меню товаров"
+msgstr "Меню товарів"
+
+msgid "Выберите товары по категориям"
+msgstr "Оберіть товари за категоріями"
+
+msgid "Все товары"
+msgstr "Усі товари"
+
+msgid "По умолчанию"
+msgstr "За замовчуванням"
+
+msgid "Дешёвые"
+msgstr "Дешеві"
+
+msgid "Дорогие"
+msgstr "Дорогі"
+
+msgid "Новые"
+msgstr "Нові"
+
+msgid "Категории"
+msgstr "Категорії"
+
+msgid "Подробнее"
+msgstr "Детальніше"
+
+msgid "В корзину"
+msgstr "У кошик"
+
+msgid "В этой категории пока нет товаров."
+msgstr "У цій категорії поки немає товарів."
+
+msgid "Категорий пока нет."
+msgstr "Категорій поки немає."
+
+msgid "Назад к товарам"
+msgstr "Назад до товарів"
+
+msgid "Нет фото"
+msgstr "Немає фото"
+
+msgid "Категория"
+msgstr "Категорія"
+
+msgid "В наличии"
+msgstr "В наявності"
+
+msgid "Нет в наличии"
+msgstr "Немає в наявності"
+
+msgid "Добавить в корзину"
+msgstr "Додати в кошик"
+
+msgid "Товары | DiplomaShop"
+msgstr "Товари | DiplomaShop"
+
+msgid "Товары"
+msgstr "Товари"
+
+msgid "Найдите нужный товар в магазине"
+msgstr "Знайдіть потрібний товар у магазині"
+
+msgid "Поиск товара..."
+msgstr "Пошук товару..."
+
+msgid "Найти"
+msgstr "Знайти"
+
+msgid "Сбросить"
+msgstr "Скинути"
+
+msgid "Результаты поиска по запросу:"
+msgstr "Результати пошуку за запитом:"
+
+msgid "Все"
+msgstr "Усі"
+
+msgid "Товары не найдены"
+msgstr "Товари не знайдені"
+
+msgid "Показать все товары"
+msgstr "Показати всі товари"
+
+msgid "DiplomaShop"
+msgstr "DiplomaShop"
+
+msgid "Товар добавлен в корзину"
+msgstr "Товар додано до кошика"
+
+msgid "Главная"
+msgstr "Головна"
+
+msgid "Меню"
+msgstr "Меню"
+
+msgid "Наверх"
+msgstr "Вгору"
+
+msgid "Интернет-магазин. Все права защищены."
+msgstr "Інтернет-магазин. Усі права захищені."
+
+msgid "Подписка"
+msgstr "Підписка"
+
+msgid "Ваш email"
+msgstr "Ваш email"
+
+msgid "Интернет-магазин"
+msgstr "Інтернет-магазин"
+
+msgid "Удобные покупки онлайн"
+msgstr "Зручні покупки онлайн"
+
+msgid "Поиск..."
+msgstr "Пошук..."
+
+msgid "Мои заказы"
+msgstr "Мої замовлення"
+
+msgid "Выйти"
+msgstr "Вийти"
+
+msgid "Войти"
+msgstr "Увійти"
+
+msgid "Заказ оформлен"
+msgstr "Замовлення оформлено"
+
+msgid "Заказ успешно оформлен!"
+msgstr "Замовлення успішно оформлено!"
+
+msgid "Спасибо за покупку. Ваш заказ сохранён в истории заказов."
+msgstr "Дякуємо за покупку. Ваше замовлення збережено."
+
+msgid "Продолжить покупки"
+msgstr "Продовжити покупки"
+
+msgid "История ваших покупок в магазине"
+msgstr "Історія ваших покупок у магазині"
+
+msgid "Заказ"
+msgstr "Замовлення"
+
+msgid "Оплачен"
+msgstr "Оплачено"
+
+msgid "Ожидает оплаты"
+msgstr "Очікує оплати"
+
+msgid "У вас пока нет заказов"
+msgstr "У вас поки немає замовлень"
+
+msgid "Перейдите в каталог и выберите товары"
+msgstr "Перейдіть у каталог і оберіть товари"
+
+msgid "Перейти в магазин"
+msgstr "Перейти в магазин"

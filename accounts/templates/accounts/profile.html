@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans "Profile" %}{% endblock %}
+{% block title %}{% trans "Профиль" %}{% endblock %}
 
 {% block content %}
 <div class="container py-5" style="max-width: 600px;">
@@ -9,17 +9,17 @@
     <div class="card shadow-sm p-4">
         <h2 class="mb-4">{% trans "Профиль" %}</h2>
 
-        <p><strong>{% trans "Имя пользователя/Username" %}:</strong> {{ user.username }}</p>
+        <p><strong>{% trans "Имя пользователя" %}:</strong> {{ user.username }}</p>
         
         <p>
-            <strong>{% trans "Номер телефона/Phone" %}:</strong>
+            <strong>{% trans "Номер телефона" %}:</strong>
             {{ user.profile.phone|default:"-" }}
         </p>
 
         <p><strong>{% trans "Email" %}:</strong> {{ user.email }}</p>
 
         <p>
-            <strong>{% trans "Адрес/Address" %}:</strong>
+            <strong>{% trans "Адрес" %}:</strong>
             {{ user.profile.address|default:"-" }}
         </p>
 

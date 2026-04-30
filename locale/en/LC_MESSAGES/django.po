@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-30 15:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+msgid "Редактировать профиль"
+msgstr "Edit profile"
+
+msgid "Сохранить"
+msgstr "Save"
+
+msgid "Профиль"
+msgstr "Profile"
+
+msgid "Имя пользователя"
+msgstr "Username"
+
+msgid "Номер телефона"
+msgstr "Phone number"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Адрес"
+msgstr "Address"
+
+msgid "Регистрация"
+msgstr "Register"
+
+msgid "Зарегистрироваться"
+msgstr "Sign up"
+
+msgid "Корзина"
+msgstr "Cart"
+
+msgid "Товар"
+msgstr "Product"
+
+msgid "Количество"
+msgstr "Quantity"
+
+msgid "Стоимость"
+msgstr "Price"
+
+msgid "Всего"
+msgstr "Total"
+
+msgid "Удалить"
+msgstr "Remove"
+
+msgid "Итого"
+msgstr "Total"
+
+msgid "Оформить заказ"
+msgstr "Checkout"
+
+msgid "Корзина пустая"
+msgstr "Cart is empty"
+
+msgid "Контакты"
+msgstr "Contacts"
+
+msgid "Свяжитесь с нами"
+msgstr "Contact us"
+
+msgid "Адрес магазина"
+msgstr "Store address"
+
+msgid "Город"
+msgstr "City"
+
+msgid "Улица"
+msgstr "Street"
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid "Контактная информация пока не добавлена."
+msgstr "Contact information is not available yet."
+
+msgid "Напишите нам"
+msgstr "Write to us"
+
+msgid "Отправить сообщение"
+msgstr "Send message"
+
+msgid "Мы в соцсетях"
+msgstr "We are on social media"
+
+msgid "Russian"
+msgstr "Russian"
+
+msgid "Ukrainian"
+msgstr "Ukrainian"
+
+msgid "English"
+msgstr "English"
+
+msgid "Нет языков"
+msgstr "No languages"
+
+msgid "Меню | DiplomaShop"
+msgstr "Menu | DiplomaShop"
+
+msgid "Меню товаров"
+msgstr "Product menu"
+
+msgid "Выберите товары по категориям"
+msgstr "Choose products by category"
+
+msgid "Все товары"
+msgstr "All products"
+
+msgid "По умолчанию"
+msgstr "Default"
+
+msgid "Дешёвые"
+msgstr "Cheap"
+
+msgid "Дорогие"
+msgstr "Expensive"
+
+msgid "Новые"
+msgstr "Newest"
+
+msgid "Категории"
+msgstr "Categories"
+
+msgid "Подробнее"
+msgstr "Details"
+
+msgid "В корзину"
+msgstr "Add to cart"
+
+msgid "В этой категории пока нет товаров."
+msgstr "No products in this category yet."
+
+msgid "Категорий пока нет."
+msgstr "No categories yet."
+
+msgid "Назад к товарам"
+msgstr "Back to products"
+
+msgid "Нет фото"
+msgstr "No image"
+
+msgid "Категория"
+msgstr "Category"
+
+msgid "В наличии"
+msgstr "In stock"
+
+msgid "Нет в наличии"
+msgstr "Out of stock"
+
+msgid "Добавить в корзину"
+msgstr "Add to cart"
+
+msgid "Товары | DiplomaShop"
+msgstr "Products | DiplomaShop"
+
+msgid "Товары"
+msgstr "Products"
+
+msgid "Найдите нужный товар в магазине"
+msgstr "Find the product you need"
+
+msgid "Поиск товара..."
+msgstr "Search product..."
+
+msgid "Найти"
+msgstr "Search"
+
+msgid "Сбросить"
+msgstr "Reset"
+
+msgid "Результаты поиска по запросу:"
+msgstr "Search results for:"
+
+msgid "Все"
+msgstr "All"
+
+msgid "Товары не найдены"
+msgstr "Products not found"
+
+msgid "Показать все товары"
+msgstr "Show all products"
+
+msgid "DiplomaShop"
+msgstr "DiplomaShop"
+
+msgid "Товар добавлен в корзину"
+msgstr "Product added to cart"
+
+msgid "Главная"
+msgstr "Home"
+
+msgid "Меню"
+msgstr "Menu"
+
+msgid "Наверх"
+msgstr "Top"
+
+msgid "Интернет-магазин. Все права защищены."
+msgstr "Online store. All rights reserved."
+
+msgid "Подписка"
+msgstr "Subscribe"
+
+msgid "Ваш email"
+msgstr "Your email"
+
+msgid "Интернет-магазин"
+msgstr "Online store"
+
+msgid "Удобные покупки онлайн"
+msgstr "Easy online shopping"
+
+msgid "Поиск..."
+msgstr "Search..."
+
+msgid "Мои заказы"
+msgstr "My orders"
+
+msgid "Выйти"
+msgstr "Logout"
+
+msgid "Войти"
+msgstr "Login"
+
+msgid "Заказ оформлен"
+msgstr "Order completed"
+
+msgid "Заказ успешно оформлен!"
+msgstr "Order successfully placed!"
+
+msgid "Спасибо за покупку. Ваш заказ сохранён в истории заказов."
+msgstr "Thank you for your purchase. Your order has been saved."
+
+msgid "Продолжить покупки"
+msgstr "Continue shopping"
+
+msgid "История ваших покупок в магазине"
+msgstr "Your purchase history"
+
+msgid "Заказ"
+msgstr "Order"
+
+msgid "Оплачен"
+msgstr "Paid"
+
+msgid "Ожидает оплаты"
+msgstr "Pending payment"
+
+msgid "У вас пока нет заказов"
+msgstr "You have no orders yet"
+
+msgid "Перейдите в каталог и выберите товары"
+msgstr "Go to the catalog and choose products"
+
+msgid "Перейти в магазин"
+msgstr "Go to shop"

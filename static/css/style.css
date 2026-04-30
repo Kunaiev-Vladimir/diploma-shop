@@ -122,8 +122,11 @@ footer input:focus {
 }
 
 .menu-product-image {
-    height: 180px;
-    object-fit: cover;
+    height: 220px !important;
+    width: 100% !important;
+    object-fit: contain !important;
+    background-color: #f8f9fa;
+    padding: 10px;
 }
 
 .menu-product-title {
@@ -138,4 +141,23 @@ footer input:focus {
     min-height: 32px;
     display: flex;
     align-items: center;
+}
+
+/* Активный язык = как hover */
+.active-lang {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+
+.active-lang {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+
+.active-lang:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
 }

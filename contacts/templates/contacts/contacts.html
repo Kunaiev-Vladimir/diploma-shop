@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Контакты{% endblock %}
+{% block title %}{% trans "Контакты" %}{% endblock %}
 
 {% block content %}
 <div class="container py-5">
-    <h2 class="mb-4">Контакты</h2>
+    <h2 class="mb-4">{% trans "Контакты" %}</h2>
 
     <div class="row align-items-start">
         <div class="col-md-6">
-            <h5>{{ contact_info.title|default:"Свяжитесь с нами" }}</h5>
+            <h5>{{ contact_info.title|default:_("Свяжитесь с нами") }}</h5>
 
             {% if contact_info.description %}
                 <p>{{ contact_info.description }}</p>
@@ -17,7 +18,7 @@
             {% if contact_info %}
 
                 <div class="card mb-3 p-3 shadow-sm">
-                    <h6 class="mb-2">Контакты</h6>
+                    <h6 class="mb-2">{% trans "Контакты" %}</h6>
 
                     {% for phone in contact_info.phones.all %}
                         <p class="mb-1">
@@ -35,15 +36,15 @@
                 {% for address in contact_info.addresses.all %}
                     <div class="card mb-3 p-3 shadow-sm">
 
-                        <h6 class="mb-2">Адрес магазина</h6>
+                        <h6 class="mb-2">{% trans "Адрес магазина" %}</h6>
 
-                        <p class="mb-1"><strong>Город:</strong> {{ address.city }}</p>
-                        <p class="mb-1"><strong>Улица:</strong> {{ address.street }}</p>
-                        <p class="mb-2"><strong>Адрес:</strong> {{ address.address }}</p>
+                        <p class="mb-1"><strong>{% trans "Город" %}:</strong> {{ address.city }}</p>
+                        <p class="mb-1"><strong>{% trans "Улица" %}:</strong> {{ address.street }}</p>
+                        <p class="mb-2"><strong>{% trans "Адрес" %}:</strong> {{ address.address }}</p>
 
                         {% if address.phone %}
                             <p class="mb-2">
-                                <strong>Телефон:</strong>
+                                <strong>{% trans "Телефон" %}:</strong>
                                 <a href="tel:{{ address.phone }}">{{ address.phone }}</a>
                             </p>
                         {% endif %}
@@ -61,18 +62,15 @@
                     </div>
                 {% endfor %}
 
-                
-                
             {% else %}
-                <p>Контактная информация пока не добавлена.</p>
+                <p>{% trans "Контактная информация пока не добавлена." %}</p>
             {% endif %}
         </div>
 
-{#        <div class="col-md-6">#}
         <div class="col-md-6" style="position: sticky; top: 100px;">
             
             <div class="card shadow-sm p-4">
-                <h5 class="mb-3">Напишите нам</h5>
+                <h5 class="mb-3">{% trans "Напишите нам" %}</h5>
 
                 {% if messages %}
                     {% for message in messages %}
@@ -98,12 +96,12 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">
-                        Отправить сообщение
+                        {% trans "Отправить сообщение" %}
                     </button>
                 </form>
 
                 <div class="text-center mt-4">
-                    <h6>Мы в соцсетях</h6>
+                    <h6>{% trans "Мы в соцсетях" %}</h6>
 
                     <div class="d-flex justify-content-center gap-2 mt-2 flex-wrap">
                         {% for social in contact_info.social_links.all %}

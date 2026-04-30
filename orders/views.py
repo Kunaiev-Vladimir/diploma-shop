@@ -32,7 +32,8 @@ def create_order(request):
     request.session['cart'] = {}
     request.session.modified = True
 
-    return redirect('orders:user_orders')
+    #return redirect('orders:user_orders')
+    return redirect('orders:order_success')
 
 @login_required
 def user_orders(request):
@@ -41,3 +42,7 @@ def user_orders(request):
     return render(request, 'orders/user_orders.html', {
         'orders': orders
     })
+    
+@login_required
+def order_success(request):
+    return render(request, 'orders/order_success.html')

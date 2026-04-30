@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Корзина{% endblock %}
+{% block title %}{% trans "Корзина" %}{% endblock %}
 
 {% block content %}
 <div class="container py-5">
-    <h2 class="mb-4">Корзина</h2>
+    <h2 class="mb-4">{% trans "Корзина" %}</h2>
 
     {% if cart_items %}
         <table class="table align-middle">
             <thead>
                 <tr>
-                    <th>Товар</th>
-                    <th>Количество</th>
-                    <th>Стоимость</th>
-                    <th>Всего</th>
+                    <th>{% trans "Товар" %}</th>
+                    <th>{% trans "Количество" %}</th>
+                    <th>{% trans "Стоимость" %}</th>
+                    <th>{% trans "Всего" %}</th>
                     <th></th>
                 </tr>
             </thead>
@@ -46,7 +47,7 @@
                         <td>
                             <a href="{% url 'cart:cart_remove' item.product.id %}"
                                class="btn btn-danger btn-sm">
-                                Удалить
+                                {% trans "Удалить" %}
                             </a>
                         </td>
                     </tr>
@@ -55,13 +56,15 @@
         </table>
 
         <h4 class="mt-4">
-            Итого: <span class="text-primary">{{ total_price|floatformat:0 }} грн</span>
+            {% trans "Итого" %}: <span class="text-primary">{{ total_price|floatformat:0 }} грн</span>
         </h4>
 
-        <a href="{% url 'orders:create_order' %}" class="btn btn-success"> Оформить заказ </a>
+        <a href="{% url 'orders:create_order' %}" class="btn btn-success">
+            {% trans "Оформить заказ" %}
+        </a>
 
     {% else %}
-        <p>Корзина пустая</p>
+        <p>{% trans "Корзина пустая" %}</p>
     {% endif %}
 </div>
 {% endblock %}

@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{% url 'shop:product_list' %}">
@@ -13,7 +15,7 @@
                 name="q"
                 value="{{ request.GET.q }}"
                 class="form-control form-control-sm"
-                placeholder="Поиск...">
+                placeholder="{% trans 'Поиск...' %}">
 
             <button type="submit"
                 class="btn btn-sm btn-outline-primary ms-2">
@@ -30,25 +32,25 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'shop:product_list' %}">
-                        Главная
+                        {% trans "Главная" %}
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'menu:menu_list' %}">
-                        Меню
+                        {% trans "Меню" %}
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacts:contacts' %}">
-                        Контакты
+                        {% trans "Контакты" %}
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'cart:cart_detail' %}">
-                        Корзина
+                        {% trans "Корзина" %}
                         <span class="badge bg-warning text-dark">
                             {{ cart_count }}
                         </span>
@@ -57,18 +59,11 @@
 
                 {% if user.is_authenticated %}
 
-                    
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'orders:user_orders' %}">
-                            Мои заказы
+                            {% trans "Мои заказы" %}
                         </a>
                     </li>
-
-{#                    <li class="nav-item">#}
-{#                      <a class="nav-link" href="{% url 'accounts:profile' %}">#}
-{#                            Профиль#}
-{#                        </a>#}
-{#                    </li>#}
 
                     <!-- 👤 Имя пользователя -->
                     <li class="nav-item me-2">
@@ -81,7 +76,7 @@
                         <form method="post" action="{% url 'logout' %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-outline-light btn-sm">
-                                Выйти
+                                {% trans "Выйти" %}
                             </button>
                         </form>
                     </li>
@@ -90,13 +85,13 @@
 
                     <li class="nav-item">
                         <a class="btn btn-outline-light btn-sm me-2" href="{% url 'login' %}">
-                            Войти
+                            {% trans "Войти" %}
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="btn btn-warning btn-sm" href="{% url 'accounts:register' %}">
-                            Регистрация
+                            {% trans "Регистрация" %}
                         </a>
                     </li>
 

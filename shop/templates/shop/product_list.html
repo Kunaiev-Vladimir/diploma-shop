@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Товары | DiplomaShop{% endblock %}
+{% block title %}{% trans "Товары | DiplomaShop" %}{% endblock %}
 
 {% block content %}
 <div class="container py-5">
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h2 class="fw-bold mb-1">Товары</h2>
-            <p class="text-muted mb-0">Найдите нужный товар в магазине</p>
+            <h2 class="fw-bold mb-1">{% trans "Товары" %}</h2>
+            <p class="text-muted mb-0">{% trans "Найдите нужный товар в магазине" %}</p>
         </div>
     </div>
 
@@ -18,15 +19,15 @@
                    name="q"
                    value="{{ query }}"
                    class="form-control"
-                   placeholder="Поиск товара...">
+                   placeholder="{% trans 'Поиск товара...' %}">
 
             <button class="btn btn-primary" type="submit">
-                Найти
+                {% trans "Найти" %}
             </button>
 
             {% if query %}
                 <a href="{% url 'shop:product_list' %}" class="btn btn-outline-secondary">
-                    Сбросить
+                    {% trans "Сбросить" %}
                 </a>
             {% endif %}
         </div>
@@ -35,7 +36,7 @@
     {% if query %}
         <div class="d-flex justify-content-between align-items-center mb-3">
             <p class="text-muted mb-0">
-                Результаты поиска по запросу: <strong>{{ query }}</strong>
+                {% trans "Результаты поиска по запросу:" %} <strong>{{ query }}</strong>
             </p>
 
             <span class="badge bg-primary">
@@ -43,6 +44,20 @@
             </span>
         </div>
     {% endif %}
+
+    <div class="mb-4 d-flex flex-wrap gap-2">
+        <a href="{% url 'shop:product_list' %}"
+            class="btn {% if not category_slug %}btn-dark{% else %}btn-outline-dark{% endif %}">
+                {% trans "Все" %}
+        </a>
+
+        {% for category in categories %}
+            <a href="?category={{ category.slug }}{% if q %}&q={{ q }}{% endif %}"
+                class="btn {% if category_slug == category.slug %}btn-dark{% else %}btn-outline-dark{% endif %}">
+                    {{ category.name }}
+            </a>
+        {% endfor %}
+    </div>
 
     <div class="row g-4">
         {% for product in products %}
@@ -53,7 +68,7 @@
                         <img src="{{ product.image.url }}"
                              class="card-img-top"
                              alt="{{ product.name }}"
-                             style="height: 220px; object-fit: cover;">
+                             style="height: 220px; object-fit: contain; background-color: #f8f9fa; padding: 10px;">
                     {% endif %}
 
                     <div class="card-body d-flex flex-column">
@@ -73,12 +88,12 @@
                             <div class="d-grid gap-2">
                                 <a href="{% url 'shop:product_detail' product.slug %}"
                                    class="btn btn-outline-primary btn-sm">
-                                    Подробнее
+                                    {% trans "Подробнее" %}
                                 </a>
 
                                 <a href="{% url 'cart:cart_add' product.id %}"
                                    class="btn btn-success btn-sm">
-                                    В корзину
+                                    {% trans "В корзину" %}
                                 </a>
                             </div>
                         </div>
@@ -92,11 +107,11 @@
                     <div class="fs-1 mb-3">🔍</div>
 
                     <p class="text-muted mb-3">
-                        Товары не найдены
+                        {% trans "Товары не найдены" %}
                     </p>
 
                     <a href="{% url 'shop:product_list' %}" class="btn btn-outline-primary btn-sm">
-                        Показать все товары
+                        {% trans "Показать все товары" %}
                     </a>
                 </div>
             </div>

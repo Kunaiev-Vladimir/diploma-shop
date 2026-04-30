@@ -1,6 +1,17 @@
-<div class="header-hero">
-    <div class="container text-center">
-        <h1 class="mb-2">Интернет-магазин</h1>
-        <p class="mb-0">Удобные покупки онлайн</p>
+{% load i18n %}
+
+<!-- ОБЕРТКА header (добавили position-relative, чтобы можно было позиционировать переключатель) -->
+<div class="header-hero position-relative">
+
+    <!-- 🔥 ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА (правый верхний угол) -->
+    <div style="position: absolute; top: 10px; right: 15px; z-index: 1000;">
+        {% include 'languages/language_switcher.html' %}
     </div>
+
+    <!-- 🔽 ТВОЙ ОРИГИНАЛЬНЫЙ КОД (НЕ ТРОГАЛИ) -->
+    <div class="container text-center">
+        <h1 class="mb-2">{% trans "Интернет-магазин" %}</h1>
+        <p class="mb-0">{% trans "Удобные покупки онлайн" %}</p>
+    </div>
+
 </div>

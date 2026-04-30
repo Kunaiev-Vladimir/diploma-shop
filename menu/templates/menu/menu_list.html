@@ -1,82 +1,146 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Меню | DiplomaShop{% endblock %}
+{% block title %}{% trans "Меню | DiplomaShop" %}{% endblock %}
 
 {% block content %}
 <div class="container py-5">
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h2 class="mb-1">Меню товаров</h2>
-            <p class="text-muted mb-0">Выберите товары по категориям</p>
+            <h2 class="mb-1">{% trans "Меню товаров" %}</h2>
+            <p class="text-muted mb-0">{% trans "Выберите товары по категориям" %}</p>
         </div>
 
         <a href="{% url 'shop:product_list' %}" class="btn btn-outline-primary">
-            Все товары
+            {% trans "Все товары" %}
         </a>
     </div>
 
-    {% for category in categories %}
-        <div class="card shadow-sm border-0 rounded-4 mb-4">
-            <div class="card-header bg-dark text-white rounded-top-4">
-                <h4 class="mb-0">{{ category.name }}</h4>
-            </div>
+    <!-- 🔥 ДОБАВИЛИ СОРТИРОВКУ -->
+    <div class="mb-4 d-flex gap-2 flex-wrap">
 
-            <div class="card-body">
-                {% if category.description %}
-                    <p class="text-muted">{{ category.description }}</p>
-                {% endif %}
+        <a href="{% url 'menu:menu_list' %}"
+           class="btn btn-sm {% if not sort %}btn-dark{% else %}btn-outline-dark{% endif %}">
+            {% trans "По умолчанию" %}
+        </a>
 
-                <div class="row justify-content-center">
-                    {% for product in category.products.all %}
-                        {% if product.is_available %}
-                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                <div class="card h-100 d-flex flex-column shadow-sm border-0 rounded-4 menu-product-card">
+        <a href="?sort=cheap"
+           class="btn btn-sm {% if sort == 'cheap' %}btn-dark{% else %}btn-outline-dark{% endif %}">
+            {% trans "Дешёвые" %}
+        </a>
 
-                                    {% if product.image %}
-                                        <img src="{{ product.image.url }}"
-                                             class="card-img-top rounded-top-4 menu-product-image"
-                                             alt="{{ product.name }}">
-                                    {% endif %}
+        <a href="?sort=expensive"
+           class="btn btn-sm {% if sort == 'expensive' %}btn-dark{% else %}btn-outline-dark{% endif %}">
+            {% trans "Дорогие" %}
+        </a>
 
-                                    <div class="card-body py-3 d-flex flex-column">
-                                        <h5 class="mb-2 menu-product-title">
-                                            {{ product.name }}
-                                        </h5>
+        <a href="?sort=new"
+           class="btn btn-sm {% if sort == 'new' %}btn-dark{% else %}btn-outline-dark{% endif %}">
+            {% trans "Новые" %}
+        </a>
 
-                                        <p class="text-muted small mb-2 menu-product-description">
-                                            {{ product.description|truncatewords:15 }}
-                                        </p>
+    </div>
 
-                                        <p class="fw-bold mb-2 text-primary menu-product-price">
-                                            {{ product.price }} грн
-                                        </p>
+    <div class="row">
 
-                                        <div class="mt-auto">
-                                            <a href="{% url 'shop:product_detail' product.slug %}"
-                                                class="btn btn-sm btn-outline-primary w-100 mb-2">
-                                                    Подробнее
-                                            </a>
+        <!-- 🔥 СЛЕВА ФИЛЬТР -->
+        <div class="col-md-3 mb-4">
 
-                                            <button class="btn btn-sm btn-success w-100 add-to-cart-btn"
-                                                data-product-id="{{ product.id }}">
-                                                    В корзину
-                                            </button>
-                                        </div>
-                                    </div>
+            <div class="card shadow-sm border-0 rounded-4 sticky-top" style="top: 90px;">
+                <div class="card-header bg-dark text-white rounded-top-4">
+                    {% trans "Категории" %}
+                </div>
 
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% empty %}
-                        <p class="text-muted">В этой категории пока нет товаров.</p>
+                <div class="list-group list-group-flush">
+
+                    {% for category in categories %}
+                        <a href="#category-{{ category.id }}"
+                           class="list-group-item list-group-item-action">
+                            {{ category.name }}
+                        </a>
                     {% endfor %}
+
                 </div>
             </div>
-        </div>
-    {% empty %}
-        <p class="text-center text-muted">Категорий пока нет.</p>
-    {% endfor %}
 
+        </div>
+
+        <!-- 👉 СПРАВА ТВОЙ КОД БЕЗ ИЗМЕНЕНИЙ -->
+        <div class="col-md-9">
+
+            {% for category in categories %}
+                <div id="category-{{ category.id }}" class="card shadow-sm border-0 rounded-4 mb-4">
+                    <div class="card-header bg-dark text-white rounded-top-4">
+                        <h4 class="mb-0">{{ category.name }}</h4>
+                    </div>
+
+                    <div class="card-body">
+                        {% if category.description %}
+                            <p class="text-muted">{{ category.description }}</p>
+                        {% endif %}
+
+                        <div class="row justify-content-center">
+                            {% for product in category.products.all %}
+                                {% if product.is_available %}
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="card h-100 d-flex flex-column shadow-sm border-0 rounded-4 menu-product-card">
+
+                                            {% if product.image %}
+                                                <img src="{{ product.image.url }}"
+                                                    class="card-img-top rounded-top-4 menu-product-image"
+                                                    alt="{{ product.name }}"
+                                                    style="height: 220px; object-fit: contain; background-color: #f8f9fa; padding: 10px;">
+                                            {% endif %}
+
+                                            <div class="card-body py-3 d-flex flex-column">
+                                                <h5 class="mb-2 menu-product-title">
+                                                    {{ product.name }}
+                                                </h5>
+
+                                                <p class="text-muted small mb-2 menu-product-description">
+                                                    {{ product.description|truncatewords:15 }}
+                                                </p>
+
+                                                <p class="fw-bold mb-2 text-primary menu-product-price">
+                                                    {{ product.price }} грн
+                                                </p>
+
+                                                <div class="mt-auto">
+                                                    <a href="{% url 'shop:product_detail' product.slug %}"
+                                                        class="btn btn-sm btn-outline-primary w-100 mb-2">
+                                                            {% trans "Подробнее" %}
+                                                    </a>
+
+                                                    <button class="btn btn-sm btn-success w-100 add-to-cart-btn"
+                                                        data-product-id="{{ product.id }}">
+                                                            {% trans "В корзину" %}
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% empty %}
+                                <p class="text-muted">{% trans "В этой категории пока нет товаров." %}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center text-muted">{% trans "Категорий пока нет." %}</p>
+            {% endfor %}
+
+        </div>
+
+    </div>
 </div>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
 {% endblock %}

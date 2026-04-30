@@ -5,4 +5,5 @@ app_name = 'menu'
 
 urlpatterns = [
     path('', views.menu_list, name='menu_list'),
+    path('<slug:slug>/', views.menu_by_category, name='menu_by_category'),
 ]

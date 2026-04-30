@@ -1,0 +1,383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-30 15:15+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\accounts\templates\accounts\edit_profile.html:4
+#: .\accounts\templates\accounts\edit_profile.html:9
+#: .\accounts\templates\accounts\profile.html:28
+msgid "Редактировать профиль"
+msgstr ""
+
+#: .\accounts\templates\accounts\edit_profile.html:30
+msgid "Сохранить"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:4
+#: .\accounts\templates\accounts\profile.html:10
+msgid "Профиль"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:12
+msgid "Имя пользователя"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:15
+msgid "Номер телефона"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:19
+msgid "Email"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:22
+#: .\contacts\templates\contacts\contacts.html:43
+msgid "Адрес"
+msgstr ""
+
+#: .\accounts\templates\accounts\register.html:4
+#: .\accounts\templates\accounts\register.html:8
+#: .\templates\includes\nav_menu.html:94
+msgid "Регистрация"
+msgstr ""
+
+#: .\accounts\templates\accounts\register.html:26
+msgid "Зарегистрироваться"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:4
+#: .\cart\templates\cart\cart_detail.html:8
+#: .\templates\includes\nav_menu.html:53
+msgid "Корзина"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:14
+msgid "Товар"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:15
+#: .\templates\orders\user_orders.html:57
+msgid "Количество"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:16
+msgid "Стоимость"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:17
+msgid "Всего"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:50
+msgid "Удалить"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:59
+#: .\templates\orders\user_orders.html:73
+msgid "Итого"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:63
+msgid "Оформить заказ"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:67
+msgid "Корзина пустая"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:4
+#: .\contacts\templates\contacts\contacts.html:8
+#: .\contacts\templates\contacts\contacts.html:21
+#: .\templates\includes\footer.html:11 .\templates\includes\nav_menu.html:47
+msgid "Контакты"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:12
+msgid "Свяжитесь с нами"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:39
+msgid "Адрес магазина"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:41
+msgid "Город"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:42
+msgid "Улица"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:47
+msgid "Телефон"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:66
+msgid "Контактная информация пока не добавлена."
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:73
+msgid "Напишите нам"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:99
+msgid "Отправить сообщение"
+msgstr ""
+
+#: .\contacts\templates\contacts\contacts.html:104
+msgid "Мы в соцсетях"
+msgstr ""
+
+#: .\diplomashop\settings.py:151
+msgid "Russian"
+msgstr ""
+
+#: .\diplomashop\settings.py:152
+msgid "Ukrainian"
+msgstr ""
+
+#: .\diplomashop\settings.py:153
+msgid "English"
+msgstr ""
+
+#: .\languages\templates\languages\language_switcher.html:16
+msgid "Нет языков"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:4
+msgid "Меню | DiplomaShop"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:11
+msgid "Меню товаров"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:12
+msgid "Выберите товары по категориям"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:16
+msgid "Все товары"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:25
+msgid "По умолчанию"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:30
+msgid "Дешёвые"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:35
+msgid "Дорогие"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:40
+msgid "Новые"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:52
+msgid "Категории"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:112
+#: .\shop\templates\shop\product_list.html:91
+msgid "Подробнее"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:117
+#: .\shop\templates\shop\product_list.html:96
+msgid "В корзину"
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:126
+msgid "В этой категории пока нет товаров."
+msgstr ""
+
+#: .\menu\templates\menu\menu_list.html:132
+msgid "Категорий пока нет."
+msgstr ""
+
+#: .\shop\templates\shop\product_detail.html:9
+msgid "Назад к товарам"
+msgstr ""
+
+#: .\shop\templates\shop\product_detail.html:19
+msgid "Нет фото"
+msgstr ""
+
+#: .\shop\templates\shop\product_detail.html:28
+msgid "Категория"
+msgstr ""
+
+#: .\shop\templates\shop\product_detail.html:41
+msgid "В наличии"
+msgstr ""
+
+#: .\shop\templates\shop\product_detail.html:43
+#: .\shop\templates\shop\product_detail.html:53
+msgid "Нет в наличии"
+msgstr ""
+
+#: .\shop\templates\shop\product_detail.html:49
+msgid "Добавить в корзину"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:4
+msgid "Товары | DiplomaShop"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:11
+msgid "Товары"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:12
+msgid "Найдите нужный товар в магазине"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:22
+msgid "Поиск товара..."
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:25
+msgid "Найти"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:30
+msgid "Сбросить"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:39
+msgid "Результаты поиска по запросу:"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:51
+msgid "Все"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:110
+msgid "Товары не найдены"
+msgstr ""
+
+#: .\shop\templates\shop\product_list.html:114
+msgid "Показать все товары"
+msgstr ""
+
+#: .\templates\base.html:6
+msgid "DiplomaShop"
+msgstr ""
+
+#: .\templates\base.html:51
+msgid "Товар добавлен в корзину"
+msgstr ""
+
+#: .\templates\includes\footer.html:45 .\templates\includes\nav_menu.html:35
+msgid "Главная"
+msgstr ""
+
+#: .\templates\includes\footer.html:50 .\templates\includes\nav_menu.html:41
+msgid "Меню"
+msgstr ""
+
+#: .\templates\includes\footer.html:56
+msgid "Наверх"
+msgstr ""
+
+#: .\templates\includes\footer.html:62
+msgid "Интернет-магазин. Все права защищены."
+msgstr ""
+
+#: .\templates\includes\footer.html:68
+msgid "Подписка"
+msgstr ""
+
+#: .\templates\includes\footer.html:78
+msgid "Ваш email"
+msgstr ""
+
+#: .\templates\includes\header.html:13
+msgid "Интернет-магазин"
+msgstr ""
+
+#: .\templates\includes\header.html:14
+msgid "Удобные покупки онлайн"
+msgstr ""
+
+#: .\templates\includes\nav_menu.html:18
+msgid "Поиск..."
+msgstr ""
+
+#: .\templates\includes\nav_menu.html:64
+#: .\templates\orders\order_success.html:20
+#: .\templates\orders\user_orders.html:4 .\templates\orders\user_orders.html:12
+msgid "Мои заказы"
+msgstr ""
+
+#: .\templates\includes\nav_menu.html:79
+msgid "Выйти"
+msgstr ""
+
+#: .\templates\includes\nav_menu.html:88
+msgid "Войти"
+msgstr ""
+
+#: .\templates\orders\order_success.html:4
+msgid "Заказ оформлен"
+msgstr ""
+
+#: .\templates\orders\order_success.html:12
+msgid "Заказ успешно оформлен!"
+msgstr ""
+
+#: .\templates\orders\order_success.html:15
+msgid "Спасибо за покупку. Ваш заказ сохранён в истории заказов."
+msgstr ""
+
+#: .\templates\orders\order_success.html:24
+#: .\templates\orders\user_orders.html:17
+msgid "Продолжить покупки"
+msgstr ""
+
+#: .\templates\orders\user_orders.html:13
+msgid "История ваших покупок в магазине"
+msgstr ""
+
+#: .\templates\orders\user_orders.html:30
+msgid "Заказ"
+msgstr ""
+
+#: .\templates\orders\user_orders.html:38
+msgid "Оплачен"
+msgstr ""
+
+#: .\templates\orders\user_orders.html:40
+msgid "Ожидает оплаты"
+msgstr ""
+
+#: .\templates\orders\user_orders.html:88
+msgid "У вас пока нет заказов"
+msgstr ""
+
+#: .\templates\orders\user_orders.html:91
+msgid "Перейдите в каталог и выберите товары"
+msgstr ""
+
+#: .\templates\orders\user_orders.html:95
+msgid "Перейти в магазин"
+msgstr ""
