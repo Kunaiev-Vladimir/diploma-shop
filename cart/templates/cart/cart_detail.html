@@ -7,7 +7,7 @@
     <h2 class="mb-4">Корзина</h2>
 
     {% if cart_items %}
-        <table class="table">
+        <table class="table align-middle">
             <thead>
                 <tr>
                     <th>Товар</th>
@@ -37,12 +37,15 @@
                             </form>
                         </td>
 
-                        <td>{{ item.product.price }} грн</td>
+                        <!-- Цена за 1 товар -->
+                        <td>{{ item.product.price|floatformat:0 }} грн</td>
 
-                        <td>{{ item.total }} грн</td>
+                        <!-- Цена за все количество -->
+                        <td>{{ item.total_price|floatformat:0 }} грн</td>
 
                         <td>
-                            <a href="{% url 'cart:cart_remove' item.product.id %}" class="btn btn-danger btn-sm">
+                            <a href="{% url 'cart:cart_remove' item.product.id %}"
+                               class="btn btn-danger btn-sm">
                                 Удалить
                             </a>
                         </td>
@@ -51,11 +54,11 @@
             </tbody>
         </table>
 
-        <h4>Итого: {{ total }} грн</h4>
+        <h4 class="mt-4">
+            Итого: <span class="text-primary">{{ total_price|floatformat:0 }} грн</span>
+        </h4>
 
-        <a href="{% url 'orders:create_order' %}" class="btn btn-success">
-            Оформить заказ
-        </a>
+        <a href="{% url 'orders:create_order' %}" class="btn btn-success"> Оформить заказ </a>
 
     {% else %}
         <p>Корзина пустая</p>

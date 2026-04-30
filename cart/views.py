@@ -7,25 +7,28 @@ from django.http import JsonResponse
 def cart_detail(request):
     cart = request.session.get('cart', {})
     cart_items = []
-    total = 0
+    total_price = 0
 
     for product_id, item in cart.items():
-        product = get_object_or_404(Product, id=product_id)
+        product = Product.objects.get(id=product_id)
 
-        quantity = item['quantity']
+        if isinstance(item, dict):
+            quantity = item.get('quantity', 1)
+        else:
+            quantity = item
+
         item_total = product.price * quantity
+        total_price += item_total
 
         cart_items.append({
             'product': product,
             'quantity': quantity,
-            'total': item_total,
+            'total_price': item_total,
         })
-
-        total += item_total
 
     return render(request, 'cart/cart_detail.html', {
         'cart_items': cart_items,
-        'total': total,
+        'total_price': total_price,
     })
 
 

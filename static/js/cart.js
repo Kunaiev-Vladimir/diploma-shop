@@ -28,6 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     this.classList.remove('btn-success');
                     this.classList.add('btn-secondary');
 
+                    // 🔥 TOAST
+                    const toastElement = document.getElementById('cartToast');
+
+                    if (toastElement) {
+                        const toast = new bootstrap.Toast(toastElement);
+                        toast.show();
+                    }
+
                     setTimeout(() => {
                         this.textContent = 'В корзину';
                         this.classList.remove('btn-secondary');

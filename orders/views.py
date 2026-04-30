@@ -14,8 +14,13 @@ def create_order(request):
 
     order = Order.objects.create(user=request.user)
 
-    for product_id, quantity in cart.items():
+    for product_id, item in cart.items():
         product = Product.objects.get(id=product_id)
+
+        if isinstance(item, dict):
+            quantity = item.get('quantity', 1)
+        else:
+            quantity = item
 
         OrderItem.objects.create(
             order=order,
@@ -25,10 +30,14 @@ def create_order(request):
         )
 
     request.session['cart'] = {}
+    request.session.modified = True
 
-    return redirect('shop:product_list')
+    return redirect('orders:user_orders')
 
 @login_required
 def user_orders(request):
     orders = Order.objects.filter(user=request.user).order_by('-created_at')
-    return render(request, 'orders/user_orders.html', {'orders': orders})
+
+    return render(request, 'orders/user_orders.html', {
+        'orders': orders
+    })

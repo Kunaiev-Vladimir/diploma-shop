@@ -3,6 +3,23 @@
         <a class="navbar-brand" href="{% url 'shop:product_list' %}">
             Shop
         </a>
+ 
+        <form method="get"
+            action="{% url 'shop:product_list' %}"
+            class="d-flex ms-3"
+            style="max-width: 260px;">
+
+            <input type="text"
+                name="q"
+                value="{{ request.GET.q }}"
+                class="form-control form-control-sm"
+                placeholder="Поиск...">
+
+            <button type="submit"
+                class="btn btn-sm btn-outline-primary ms-2">
+        🔍
+            </button>
+        </form>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
             <span class="navbar-toggler-icon"></span>
