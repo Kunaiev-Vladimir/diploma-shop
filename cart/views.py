@@ -83,14 +83,35 @@ def cart_remove(request, product_id):
 
     return redirect('cart:cart_detail')
 
+#def update_cart(request, product_id):
+    #if request.method == 'POST':
+        #quantity = int(request.POST.get('quantity', 1))
+        #cart = request.session.get('cart', {})
+
+        #if str(product_id) in cart:
+            #cart[str(product_id)] = quantity
+
+        #request.session['cart'] = cart
+
+    #return redirect('cart:cart_detail')
+
 def update_cart(request, product_id):
     if request.method == 'POST':
         quantity = int(request.POST.get('quantity', 1))
         cart = request.session.get('cart', {})
+        product_id_str = str(product_id)
 
-        if str(product_id) in cart:
-            cart[str(product_id)] = quantity
+        product = get_object_or_404(Product, id=product_id)
+
+        if quantity > 0:
+            cart[product_id_str] = {
+                'quantity': quantity,
+                'price': str(product.price),
+            }
+        else:
+            cart.pop(product_id_str, None)
 
         request.session['cart'] = cart
+        request.session.modified = True
 
     return redirect('cart:cart_detail')
