@@ -91,10 +91,11 @@
                                     {% trans "Подробнее" %}
                                 </a>
 
-                                <a href="{% url 'cart:cart_add' product.id %}"
-                                   class="btn btn-success btn-sm">
+                                <button type="button"
+                                        class="btn btn-success add-to-cart-btn"
+                                        data-product-id="{{ product.id }}">
                                     {% trans "В корзину" %}
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
