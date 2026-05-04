@@ -34,7 +34,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 #DEBUG = True
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['*'] # временно для разработки, в продакшене нужно указать конкретные домены
+#ALLOWED_HOSTS = ['*'] # временно для разработки, в продакшене нужно указать конкретные домены
+ALLOWED_HOSTS = ['diploma-shop-my81.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
