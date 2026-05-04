@@ -17,6 +17,8 @@ from django.utils.translation import gettext_lazy as _
 
 from dotenv import load_dotenv
 
+from django.contrib.auth import get_user_model
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -173,3 +175,14 @@ LOCALE_PATHS = [
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 MODELTRANSLATION_LANGUAGES = ('ru', 'uk', 'en')
+
+
+User = get_user_model()
+
+if os.getenv('DJANGO_SUPERUSER_USERNAME'):
+    if not User.objects.filter(username=os.getenv('DJANGO_SUPERUSER_USERNAME')).exists():
+        User.objects.create_superuser(
+            username=os.getenv('DJANGO_SUPERUSER_USERNAME'),
+            email=os.getenv('DJANGO_SUPERUSER_EMAIL'),
+            password=os.getenv('DJANGO_SUPERUSER_PASSWORD')
+        )
