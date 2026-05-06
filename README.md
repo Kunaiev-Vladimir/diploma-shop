@@ -1,83 +1,121 @@
-# 🛒 DiplomaShop — Django E-commerce Project
+# 🛒 DiplomaShop — Full-Stack Django E-Commerce Platform
 
 Live Demo: https://diploma-shop-my81.onrender.com
 
 ---
 
-## 📌 About the Project
+## 📌 Project Overview
 
-DiplomaShop is a full-featured e-commerce web application built with Django.
+DiplomaShop is a production-style e-commerce web application built with Django and PostgreSQL.
 
-The project demonstrates real-world backend development skills, including:
+The project demonstrates real-world backend and full-stack development skills, including:
 
 - User authentication
 - Shopping cart functionality
 - Order processing
-- Multilanguage support (RU / UK / EN)
-- Admin panel for product management
-- Cloud image storage
+- Multilanguage support
+- Cloud media storage
+- Docker containerization
 - Production deployment
 
+The application follows modern web development practices and simulates a real online store environment.
+
 ---
 
-## 🚀 Features
+## ✨ Key Features
 
-### 🛍️ Shop
+### 🛍️ E-Commerce Functionality
 - Product catalog with categories
 - Product detail pages
-- Search across multiple languages
-- Multilanguage support (django-modeltranslation)
+- Shopping cart system
+- Quantity management
+- Checkout & order processing
+- Order history for authenticated users
 
-### 🛒 Cart
-- Add/remove products
-- Update quantity
-- Session-based cart
+### 👤 User Authentication
+- User registration
+- Login / logout system
+- User profile management
+- Session-based authentication
 
-### 👤 User System
-- Registration & login
-- Profile editing
-- Order history
+### 🌍 Multilingual Support
+- English / Ukrainian / Russian languages
+- Product and category translations
+- django-modeltranslation integration
 
-### 📦 Orders
-- Checkout system
-- Order storage in database
+### ⚙️ Admin Panel
+- Product management
+- Category management
+- Order administration
+- Contact & social links management
 
-### 🌍 Multilanguage
-- RU / UK / EN support
-- Translated fields for products and categories
+### ☁️ Cloud & Deployment
+- Cloudinary media storage
+- PostgreSQL database
+- Production deployment on Render
+- Environment variable configuration
+- Static file handling with WhiteNoise
 
-### 📞 Contacts
-- Contact information stored in database
-- Social links support
+### 🐳 Docker Support
+- Dockerized Django application
+- Docker Compose configuration
+- PostgreSQL container
+- Local containerized development environment
 
 ---
 
-## 🧠 Tech Stack
+## 🧠 Technology Stack
 
+### Backend
 - Python 3.14
 - Django 6
+- PostgreSQL
+- SQLite (local development)
+
+### Frontend
+- HTML5
+- CSS3
 - Bootstrap 5
-- SQLite (development)
-- PostgreSQL (production)
-- Cloudinary (media storage)
-- WhiteNoise (static files)
-- Render (deployment)
+
+### DevOps & Deployment
+- Docker
+- Docker Compose
+- Render
+- Gunicorn
+- WhiteNoise
+- Cloudinary
+
+### Tools
+- Git
+- GitHub
+- VS Code / PyCharm
 
 ---
 
-## ⚙️ Deployment
+## 📂 Main Functional Modules
 
-The project is deployed on Render:
+| Module | Description |
+|---|---|
+| Shop | Product catalog and product pages |
+| Cart | Session-based shopping cart |
+| Orders | Checkout and order management |
+| Accounts | Authentication and user profiles |
+| Contacts | Contact information and social links |
+| Languages | Multilanguage support |
 
-👉 https://diploma-shop-my81.onrender.com
+---
 
-### Production setup includes:
+## 🚀 Deployment
 
+The project is deployed on Render with PostgreSQL and Cloudinary integration.
+
+### Production configuration includes:
 - PostgreSQL database
-- Environment variables (.env)
-- Gunicorn server
-- Static files via WhiteNoise
-- Media files via Cloudinary
+- Gunicorn WSGI server
+- WhiteNoise static file serving
+- Cloudinary media storage
+- `.env` environment variables
+- Production security settings
 
 ---
 
