@@ -274,3 +274,30 @@ msgstr "Go to the catalog and choose products"
 
 msgid "Перейти в магазин"
 msgstr "Go to shop"
+
+msgid "Аналитика"
+msgstr "Analytics"
+
+msgid "Панель аналитики"
+msgstr "Analytics Dashboard"
+
+msgid "Всего заказов"
+msgstr "Total Orders"
+
+msgid "Всего товаров"
+msgstr "Total Products"
+
+msgid "Всего пользователей"
+msgstr "Total Users"
+
+msgid "Последние заказы"
+msgstr "Recent Orders"
+
+msgid "Пользователь"
+msgstr "User"
+
+msgid "Дата"
+msgstr "Date"
+
+msgid "Заказов пока нет"
+msgstr "No orders yet"

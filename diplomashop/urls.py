@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
+    path('admin/dashboard/', include('dashboard.urls')),
     path('admin/', admin.site.urls),    
     path('', include('shop.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
@@ -32,6 +33,7 @@ urlpatterns = [
     path('contacts/', include('contacts.urls')),
     path('menu/', include('menu.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
+    #path('admin/dashboard/', include('dashboard.urls')),
 ]
 
 

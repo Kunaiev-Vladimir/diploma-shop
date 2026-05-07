@@ -6,6 +6,16 @@
     <!-- 🔥 ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА (правый верхний угол) -->
     <div style="position: absolute; top: 10px; right: 15px; z-index: 1000;">
         {% include 'languages/language_switcher.html' %}
+
+        {% if user.is_staff %}
+            <div class="mt-2 text-end">
+                <a href="{% url 'dashboard:dashboard' %}"
+                    class="btn btn-warning btn-sm">
+                        {% trans "Аналитика" %}
+                </a>
+            </div>
+        {% endif %}
+
     </div>
 
     <!-- 🔽 ТВОЙ ОРИГИНАЛЬНЫЙ КОД (НЕ ТРОГАЛИ) -->

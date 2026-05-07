@@ -60,7 +60,8 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'contacts.apps.ContactsConfig',
     'menu.apps.MenuConfig',
-    'languages.apps.LanguagesConfig'
+    'languages.apps.LanguagesConfig',
+    'dashboard.apps.DashboardConfig'
 ]
 
 MIDDLEWARE = [

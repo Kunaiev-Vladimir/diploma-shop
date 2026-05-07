@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Панель аналитики" %}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <h2 class="mb-4">{% trans "Панель аналитики" %}</h2>
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 rounded-4 p-4">
+                <h5>{% trans "Всего заказов" %}</h5>
+                <h2>{{ orders_count }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 rounded-4 p-4">
+                <h5>{% trans "Всего товаров" %}</h5>
+                <h2>{{ products_count }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 rounded-4 p-4">
+                <h5>{% trans "Всего пользователей" %}</h5>
+                <h2>{{ users_count }}</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4 p-4">
+        <h4 class="mb-4">{% trans "Последние заказы" %}</h4>
+
+        <div style="max-height: 400px; overflow-y: auto;">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{% trans "ID" %}</th>
+                        <th>{% trans "Пользователь" %}</th>
+                        <th>{% trans "Дата" %}</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for order in recent_orders %}
+                        <tr>
+                            <td>{{ order.id }}</td>
+                            <td>{{ order.user }}</td>
+                            <td>{{ order.created_at }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3">{% trans "Заказов пока нет" %}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
