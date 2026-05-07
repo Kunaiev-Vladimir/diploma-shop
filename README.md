@@ -16,6 +16,7 @@ The project demonstrates real-world backend and full-stack development skills, i
 - Multilanguage support
 - Cloud media storage
 - Docker containerization
+- Google Analytics integration
 - Production deployment
 
 The application follows modern web development practices and simulates a real online store environment.
@@ -49,6 +50,17 @@ The application follows modern web development practices and simulates a real on
 - Order administration
 - Contact & social links management
 
+### 📊 Analytics & Dashboard
+- Google Analytics GA4 integration
+- Website traffic tracking
+- User activity monitoring
+- Custom admin analytics dashboard
+- Orders statistics
+- Products statistics
+- Users statistics
+- Recent orders monitoring
+- Multilanguage dashboard support
+
 ### ☁️ Cloud & Deployment
 - Cloudinary media storage
 - PostgreSQL database
@@ -76,6 +88,7 @@ The application follows modern web development practices and simulates a real on
 - HTML5
 - CSS3
 - Bootstrap 5
+- Django Templates
 
 ### DevOps & Deployment
 - Docker
@@ -102,6 +115,7 @@ The application follows modern web development practices and simulates a real on
 | Accounts | Authentication and user profiles |
 | Contacts | Contact information and social links |
 | Languages | Multilanguage support |
+| Dashboard | Admin analytics and statistics dashboard |
 
 ---
 
@@ -116,6 +130,8 @@ The project is deployed on Render with PostgreSQL and Cloudinary integration.
 - Cloudinary media storage
 - `.env` environment variables
 - Production security settings
+- Google Analytics GA4 integration
+- Docker local development support
 
 ---
 
@@ -128,3 +144,33 @@ DATABASE_URL=
 CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
+```
+
+---
+
+## 📈 Analytics Features
+
+The project includes integrated Google Analytics GA4 support for tracking:
+
+- Website visitors
+- User activity
+- Page views
+- Traffic analytics
+
+Additionally, a custom Django admin dashboard was implemented for:
+
+- Orders monitoring
+- Product statistics
+- User statistics
+- Recent activity overview
+
+---
+
+## 🐳 Local Development with Docker
+
+The project supports both:
+
+- Standard local Django development (SQLite)
+- Dockerized development environment with PostgreSQL
+
+This allows flexible development workflows for local testing and production-style containerized environments.
