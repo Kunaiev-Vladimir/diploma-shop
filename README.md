@@ -141,6 +141,7 @@ The project is deployed on Render with PostgreSQL and Cloudinary integration.
 SECRET_KEY=
 DEBUG=
 DATABASE_URL=
+DATABASE_URL_DOCKER=
 CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
