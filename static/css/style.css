@@ -223,3 +223,31 @@ footer {
     margin-top: 0;
 }
 
+
+/* Safari / mobile footer fix */
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.site-main {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* На телефоне footer будет нормально виден */
+@media (max-width: 768px) {
+    html,
+    body {
+        height: auto;
+        min-height: 100dvh;
+    }
+
+    body {
+        overflow: auto;
+    }
+
+    .site-main {
+        overflow-y: visible;
+        min-height: auto;
+    }
+}
