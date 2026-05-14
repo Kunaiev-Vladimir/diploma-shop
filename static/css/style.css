@@ -224,30 +224,36 @@ footer {
 }
 
 
-/* Safari / mobile footer fix */
-body {
-    min-height: 100vh;
-    min-height: 100dvh;
-}
-
-.site-main {
-    -webkit-overflow-scrolling: touch;
-}
-
-/* На телефоне footer будет нормально виден */
+/* HARD FIX FOR MOBILE SAFARI */
 @media (max-width: 768px) {
     html,
     body {
-        height: auto;
-        min-height: 100dvh;
+        height: auto !important;
+        min-height: 100% !important;
+        overflow: auto !important;
     }
 
     body {
-        overflow: auto;
+        display: block !important;
+    }
+
+    .site-top,
+    .site-main,
+    .site-bottom {
+        display: block !important;
+        position: static !important;
+        height: auto !important;
+        min-height: unset !important;
+        overflow: visible !important;
     }
 
     .site-main {
-        overflow-y: visible;
-        min-height: auto;
+        padding-bottom: 0 !important;
+    }
+
+    footer {
+        display: block !important;
+        position: static !important;
+        margin-top: 0 !important;
     }
 }
