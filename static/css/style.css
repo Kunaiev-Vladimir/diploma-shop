@@ -10,11 +10,37 @@ body {
 .header-hero {
     background: linear-gradient(135deg, #212529, #495057);
     color: white;
-    padding: 50px 0;
+
+    padding: 8px 0;
+
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+
+    letter-spacing: 4px;
+
     font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.header-hero p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.header-hero .btn {
+    padding: 2px 6px !important;
+    font-size: 0.75rem;
 }
 
 .card {
@@ -161,3 +187,39 @@ footer input:focus {
     color: #000 !important;
     border-color: #fff !important;
 }
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-top {
+    flex: 0 0 auto;
+    z-index: 1000;
+}
+
+.site-main {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0;
+    padding-bottom: 20px;
+}
+
+.site-bottom {
+    flex: 0 0 auto;
+    z-index: 1000;
+}
+
+footer {
+    margin-top: 0;
+}
+

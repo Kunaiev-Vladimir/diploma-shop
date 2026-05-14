@@ -18,11 +18,19 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-{% include 'includes/header.html' %}
+{#{% include 'includes/header.html' %}#}
 
-{% include 'includes/nav_menu.html' %}
+{#{% include 'includes/nav_menu.html' %}#}
 
-<main class="flex-grow-1">
+{#<main class="flex-grow-1">#}
+
+<div class="site-top">
+    {% include 'includes/header.html' %}
+    {% include 'includes/nav_menu.html' %}
+</div>
+
+<main class="site-main">
+
 
     {% if messages %}
         <div class="container mt-3">
@@ -39,7 +47,10 @@
     {% endblock %}
 </main>
 
-{% include 'includes/footer.html' %}
+{#{% include 'includes/footer.html' %}#}
+<div class="site-bottom">
+    {% include 'includes/footer.html' %}
+</div>
 
 <!-- 🔥 TOAST УВЕДОМЛЕНИЕ -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
