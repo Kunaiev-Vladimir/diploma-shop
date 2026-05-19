@@ -25,7 +25,8 @@ class ProfileForm(forms.ModelForm):
             'phone': 'Телефон',
             'address': 'Адрес',
         }
-        
+
+
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
@@ -40,4 +41,4 @@ class UserUpdateForm(forms.ModelForm):
 
         labels = {
             'email': 'Email',
-        }        
+        }

@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 
-
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название')
     slug = models.SlugField(max_length=120, unique=True, verbose_name='URL')
@@ -28,8 +27,10 @@ class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='Название')
     slug = models.SlugField(max_length=170, unique=True, verbose_name='URL')
     description = models.TextField(verbose_name='Описание')
-    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
-    image = models.ImageField(upload_to='products/', blank=True, null=True, verbose_name='Фото')
+    price = models.DecimalField(
+        max_digits=10, decimal_places=2, verbose_name='Цена')
+    image = models.ImageField(upload_to='products/',
+                              blank=True, null=True, verbose_name='Фото')
     stock = models.PositiveIntegerField(default=0, verbose_name='Количество')
     is_available = models.BooleanField(default=True, verbose_name='Доступен')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создан')

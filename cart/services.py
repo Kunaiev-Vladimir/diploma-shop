@@ -1,7 +1,9 @@
+"""Services for cart business logic."""
 from shop.models import Product
 
 
 def get_cart_items(cart):
+    """Return cart items and total price."""
     cart_items = []
     total_price = 0
 
@@ -33,6 +35,7 @@ def get_cart_items(cart):
 
 
 def add_product_to_cart(cart, product):
+    """Add product to cart or increase its quantity."""
     product_id_str = str(product.id)
 
     if product_id_str in cart:
@@ -47,6 +50,7 @@ def add_product_to_cart(cart, product):
 
 
 def update_product_quantity(cart, product, quantity):
+    """Update product quantity in cart."""
     product_id_str = str(product.id)
 
     if quantity > 0:

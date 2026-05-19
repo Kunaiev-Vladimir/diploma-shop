@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class ContactMessage(models.Model):
     name = models.CharField(max_length=100, verbose_name='Имя')
     email = models.EmailField(verbose_name='Email')
@@ -26,26 +27,28 @@ class NewsletterSubscriber(models.Model):
 
     def __str__(self):
         return self.email
-    
-#class ContactInfo(models.Model):
-    #email = models.EmailField(verbose_name='Email')
-    #phone = models.CharField(max_length=30, verbose_name='Телефон')
-    #address = models.CharField(max_length=255, verbose_name='Адрес')
 
-    #facebook = models.URLField(blank=True, verbose_name='Facebook')
-    #instagram = models.URLField(blank=True, verbose_name='Instagram')
-    #twitter = models.URLField(blank=True, verbose_name='Twitter')
-    #linkedin = models.URLField(blank=True, verbose_name='LinkedIn')
+# class ContactInfo(models.Model):
+    # email = models.EmailField(verbose_name='Email')
+    # phone = models.CharField(max_length=30, verbose_name='Телефон')
+    # address = models.CharField(max_length=255, verbose_name='Адрес')
 
-    #class Meta:
-        #verbose_name = 'Контактная информация'
-        #verbose_name_plural = 'Контактная информация'
+    # facebook = models.URLField(blank=True, verbose_name='Facebook')
+    # instagram = models.URLField(blank=True, verbose_name='Instagram')
+    # twitter = models.URLField(blank=True, verbose_name='Twitter')
+    # linkedin = models.URLField(blank=True, verbose_name='LinkedIn')
 
-    #def __str__(self):
-        #return 'Контактная информация сайта'
-        
+    # class Meta:
+        # verbose_name = 'Контактная информация'
+        # verbose_name_plural = 'Контактная информация'
+
+    # def __str__(self):
+        # return 'Контактная информация сайта'
+
+
 class ContactInfo(models.Model):
-    title = models.CharField(max_length=100, default='Контакты', verbose_name='Заголовок')
+    title = models.CharField(
+        max_length=100, default='Контакты', verbose_name='Заголовок')
     description = models.TextField(blank=True, verbose_name='Описание')
 
     class Meta:
@@ -57,7 +60,8 @@ class ContactInfo(models.Model):
 
 
 class ContactEmail(models.Model):
-    contact_info = models.ForeignKey(ContactInfo, on_delete=models.CASCADE, related_name='emails')
+    contact_info = models.ForeignKey(
+        ContactInfo, on_delete=models.CASCADE, related_name='emails')
     email = models.EmailField(verbose_name='Email')
 
     class Meta:
@@ -69,7 +73,8 @@ class ContactEmail(models.Model):
 
 
 class ContactPhone(models.Model):
-    contact_info = models.ForeignKey(ContactInfo, on_delete=models.CASCADE, related_name='phones')
+    contact_info = models.ForeignKey(
+        ContactInfo, on_delete=models.CASCADE, related_name='phones')
     phone = models.CharField(max_length=30, verbose_name='Телефон')
 
     class Meta:
@@ -89,8 +94,9 @@ class ContactAddress(models.Model):
     city = models.CharField(max_length=100, verbose_name='Город')
     street = models.CharField(max_length=150, verbose_name='Улица')
     address = models.CharField(max_length=255, verbose_name='Полный адрес')
-    phone = models.CharField(max_length=20, blank=True, verbose_name='Телефон магазина')
-    #map_url = models.URLField(blank=True, verbose_name='Ссылка на карту')
+    phone = models.CharField(max_length=20, blank=True,
+                             verbose_name='Телефон магазина')
+    # map_url = models.URLField(blank=True, verbose_name='Ссылка на карту')
     map_url = models.TextField(blank=True, verbose_name='Ссылка на карту')
 
     class Meta:
@@ -102,8 +108,10 @@ class ContactAddress(models.Model):
 
 
 class SocialLink(models.Model):
-    slug = models.SlugField(max_length=50, verbose_name='Код (facebook, instagram)')
-    contact_info = models.ForeignKey(ContactInfo, on_delete=models.CASCADE, related_name='social_links')
+    slug = models.SlugField(
+        max_length=50, verbose_name='Код (facebook, instagram)')
+    contact_info = models.ForeignKey(
+        ContactInfo, on_delete=models.CASCADE, related_name='social_links')
     name = models.CharField(max_length=50, verbose_name='Название')
     url = models.URLField(verbose_name='Ссылка')
 

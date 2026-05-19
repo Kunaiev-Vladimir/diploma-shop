@@ -115,6 +115,7 @@ from django.contrib import messages
 
 @login_required
 def create_order(request):
+    """Create order from session cart."""
     cart = request.session.get('cart', {})
 
     if not cart:
@@ -161,6 +162,7 @@ def create_order(request):
 
 @login_required
 def user_orders(request):
+    """Display user orders history."""
     # orders = Order.objects.filter(user=request.user).order_by('-created_at')
     orders = (
         Order.objects
@@ -176,4 +178,5 @@ def user_orders(request):
 
 @login_required
 def order_success(request):
+    """Display successful order page."""
     return render(request, 'orders/order_success.html')

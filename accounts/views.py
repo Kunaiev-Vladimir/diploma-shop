@@ -7,6 +7,7 @@ from .models import Profile
 
 # Create your views here.
 
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -19,13 +20,16 @@ def register(request):
 
     return render(request, 'accounts/register.html', {'form': form})
 
-#@login_required
-#def profile(request):
-    #return render(request, 'accounts/profile.html')
+# @login_required
+# def profile(request):
+    # return render(request, 'accounts/profile.html')
+
+
 @login_required
 def profile(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
     return render(request, 'accounts/profile.html', {'profile': profile})
+
 
 @login_required
 def edit_profile(request):

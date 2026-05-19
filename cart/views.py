@@ -72,6 +72,7 @@ from .services import get_cart_items, add_product_to_cart, update_product_quanti
 
 
 def cart_detail(request):
+    """Display shopping cart."""
     cart = request.session.get('cart', {})
     cart_items, total_price = get_cart_items(cart)
 
@@ -96,6 +97,7 @@ def cart_detail(request):
 
 
 def cart_add(request, product_id):
+    """Add product to cart."""
     product = get_object_or_404(Product, id=product_id)
 
     cart = request.session.get('cart', {})
@@ -128,6 +130,7 @@ def cart_add(request, product_id):
 
 
 def cart_remove(request, product_id):
+    """Remove product from cart."""
     cart = request.session.get('cart', {})
 
     if str(product_id) in cart:
@@ -151,6 +154,7 @@ def cart_remove(request, product_id):
 
 
 def update_cart(request, product_id):
+    """Update product quantity in cart."""
     if request.method == 'POST':
         quantity = int(request.POST.get('quantity', 1))
         cart = request.session.get('cart', {})

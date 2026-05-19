@@ -12,7 +12,7 @@ def dashboard_view(request):
     products_count = Product.objects.count()
     users_count = User.objects.count()
 
-    #recent_orders = Order.objects.order_by('-id')[:5]
+    # recent_orders = Order.objects.order_by('-id')[:5]
     recent_orders = Order.objects.order_by('-id')
 
     context = {

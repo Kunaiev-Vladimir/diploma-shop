@@ -4,13 +4,13 @@ from .models import Product, Category
 
 # Create your views here.
 
-#def product_list(request):
-    #products = Product.objects.filter(is_available=True)
-    #return render(request, 'shop/product_list.html', {'products': products})
-    
+# def product_list(request):
+# products = Product.objects.filter(is_available=True)
+# return render(request, 'shop/product_list.html', {'products': products})
 
 
 def product_list(request):
+    """Display list of available products."""
     products = Product.objects.filter(is_available=True)
     categories = Category.objects.filter(is_active=True)
 
@@ -19,9 +19,9 @@ def product_list(request):
 
     if q:
         products = products.filter(
-            #Q(name__icontains=q) |
-            #Q(description__icontains=q) |
-            #Q(category__name__icontains=q)
+            # Q(name__icontains=q) |
+            # Q(description__icontains=q) |
+            # Q(category__name__icontains=q)
             Q(name__icontains=q) |
             Q(name_ru__icontains=q) |
             Q(name_uk__icontains=q) |
@@ -36,7 +36,7 @@ def product_list(request):
             Q(category__name_ru__icontains=q) |
             Q(category__name_uk__icontains=q) |
             Q(category__name_en__icontains=q)
-    ).distinct()
+        ).distinct()
 
     if category_slug:
         products = products.filter(category__slug=category_slug)
@@ -54,5 +54,3 @@ def product_list(request):
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, is_available=True)
     return render(request, 'shop/product_detail.html', {'product': product})
-
-
