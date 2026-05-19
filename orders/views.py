@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Order, OrderItem
 from shop.models import Product
+from django.db import transaction
 
 # Create your views here.
 
@@ -36,6 +37,43 @@ from shop.models import Product
 #     return redirect('orders:order_success')
 
 
+# @login_required
+# def create_order(request):
+#     cart = request.session.get('cart', {})
+
+#     if not cart:
+#         return redirect('cart:cart_detail')
+
+#     product_ids = cart.keys()
+#     products = Product.objects.filter(id__in=product_ids)
+#     products_dict = {str(product.id): product for product in products}
+
+#     order = Order.objects.create(user=request.user)
+
+#     for product_id, item in cart.items():
+#         product = products_dict.get(str(product_id))
+
+#         if not product:
+#             continue
+
+#         if isinstance(item, dict):
+#             quantity = item.get('quantity', 1)
+#         else:
+#             quantity = item
+
+#         OrderItem.objects.create(
+#             order=order,
+#             product=product,
+#             price=product.price,
+#             quantity=quantity
+#         )
+
+#     request.session['cart'] = {}
+#     request.session.modified = True
+
+#     return redirect('orders:order_success')
+
+
 @login_required
 def create_order(request):
     cart = request.session.get('cart', {})
@@ -47,25 +85,26 @@ def create_order(request):
     products = Product.objects.filter(id__in=product_ids)
     products_dict = {str(product.id): product for product in products}
 
-    order = Order.objects.create(user=request.user)
+    with transaction.atomic():
+        order = Order.objects.create(user=request.user)
 
-    for product_id, item in cart.items():
-        product = products_dict.get(str(product_id))
+        for product_id, item in cart.items():
+            product = products_dict.get(str(product_id))
 
-        if not product:
-            continue
+            if not product:
+                continue
 
-        if isinstance(item, dict):
-            quantity = item.get('quantity', 1)
-        else:
-            quantity = item
+            if isinstance(item, dict):
+                quantity = item.get('quantity', 1)
+            else:
+                quantity = item
 
-        OrderItem.objects.create(
-            order=order,
-            product=product,
-            price=product.price,
-            quantity=quantity
-        )
+            OrderItem.objects.create(
+                order=order,
+                product=product,
+                price=product.price,
+                quantity=quantity
+            )
 
     request.session['cart'] = {}
     request.session.modified = True
