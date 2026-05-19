@@ -4,13 +4,49 @@ from django.http import JsonResponse
 
 # Create your views here.
 
+
+# def cart_detail(request):
+#     cart = request.session.get('cart', {})
+#     cart_items = []
+#     total_price = 0
+
+#     for product_id, item in cart.items():
+#         product = Product.objects.get(id=product_id)
+
+#         if isinstance(item, dict):
+#             quantity = item.get('quantity', 1)
+#         else:
+#             quantity = item
+
+#         item_total = product.price * quantity
+#         total_price += item_total
+
+#         cart_items.append({
+#             'product': product,
+#             'quantity': quantity,
+#             'total_price': item_total,
+#         })
+
+#     return render(request, 'cart/cart_detail.html', {
+#         'cart_items': cart_items,
+#         'total_price': total_price,
+#     })
+
+
 def cart_detail(request):
     cart = request.session.get('cart', {})
     cart_items = []
     total_price = 0
 
+    product_ids = cart.keys()
+    products = Product.objects.filter(id__in=product_ids)
+    products_dict = {str(product.id): product for product in products}
+
     for product_id, item in cart.items():
-        product = Product.objects.get(id=product_id)
+        product = products_dict.get(str(product_id))
+
+        if not product:
+            continue
 
         if isinstance(item, dict):
             quantity = item.get('quantity', 1)
@@ -32,18 +68,18 @@ def cart_detail(request):
     })
 
 
-#def cart_add(request, product_id):
-    #cart = request.session.get('cart', {})
+# def cart_add(request, product_id):
+    # cart = request.session.get('cart', {})
 
-    #if str(product_id) in cart:
-        #cart[str(product_id)] += 1
-    #else:
-        #cart[str(product_id)] = 1
+    # if str(product_id) in cart:
+    # cart[str(product_id)] += 1
+    # else:
+    # cart[str(product_id)] = 1
 
-    #request.session['cart'] = cart
-    #request.session.modified = True
+    # request.session['cart'] = cart
+    # request.session.modified = True
 
-    #return redirect(request.META.get('HTTP_REFERER', 'shop:product_list'))
+    # return redirect(request.META.get('HTTP_REFERER', 'shop:product_list'))
 def cart_add(request, product_id):
     product = get_object_or_404(Product, id=product_id)
 
@@ -73,6 +109,7 @@ def cart_add(request, product_id):
 
     return redirect(request.META.get('HTTP_REFERER', 'shop:product_list'))
 
+
 def cart_remove(request, product_id):
     cart = request.session.get('cart', {})
 
@@ -83,17 +120,18 @@ def cart_remove(request, product_id):
 
     return redirect('cart:cart_detail')
 
-#def update_cart(request, product_id):
-    #if request.method == 'POST':
-        #quantity = int(request.POST.get('quantity', 1))
-        #cart = request.session.get('cart', {})
+# def update_cart(request, product_id):
+    # if request.method == 'POST':
+    # quantity = int(request.POST.get('quantity', 1))
+    # cart = request.session.get('cart', {})
 
-        #if str(product_id) in cart:
-            #cart[str(product_id)] = quantity
+    # if str(product_id) in cart:
+    # cart[str(product_id)] = quantity
 
-        #request.session['cart'] = cart
+    # request.session['cart'] = cart
 
-    #return redirect('cart:cart_detail')
+    # return redirect('cart:cart_detail')
+
 
 def update_cart(request, product_id):
     if request.method == 'POST':
