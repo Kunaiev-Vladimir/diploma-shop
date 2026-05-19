@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from shop.models import Product
 from django.http import JsonResponse
-from .services import get_cart_items
-from .services import get_cart_items, add_product_to_cart
+# from .services import get_cart_items
+# from .services import get_cart_items, add_product_to_cart
+from .services import get_cart_items, add_product_to_cart, update_product_quantity
 
 # Create your views here.
 
@@ -153,17 +154,21 @@ def update_cart(request, product_id):
     if request.method == 'POST':
         quantity = int(request.POST.get('quantity', 1))
         cart = request.session.get('cart', {})
-        product_id_str = str(product_id)
+
+        # product_id_str = str(product_id)
+
+        # product = get_object_or_404(Product, id=product_id)
+
+        # if quantity > 0:
+        #     cart[product_id_str] = {
+        #         'quantity': quantity,
+        #         'price': str(product.price),
+        #     }
+        # else:
+        #     cart.pop(product_id_str, None)
 
         product = get_object_or_404(Product, id=product_id)
-
-        if quantity > 0:
-            cart[product_id_str] = {
-                'quantity': quantity,
-                'price': str(product.price),
-            }
-        else:
-            cart.pop(product_id_str, None)
+        cart = update_product_quantity(cart, product, quantity)
 
         request.session['cart'] = cart
         request.session.modified = True

@@ -44,3 +44,17 @@ def add_product_to_cart(cart, product):
         }
 
     return cart
+
+
+def update_product_quantity(cart, product, quantity):
+    product_id_str = str(product.id)
+
+    if quantity > 0:
+        cart[product_id_str] = {
+            'quantity': quantity,
+            'price': str(product.price),
+        }
+    else:
+        cart.pop(product_id_str, None)
+
+    return cart
