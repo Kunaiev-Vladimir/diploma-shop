@@ -30,3 +30,17 @@ def get_cart_items(cart):
         })
 
     return cart_items, total_price
+
+
+def add_product_to_cart(cart, product):
+    product_id_str = str(product.id)
+
+    if product_id_str in cart:
+        cart[product_id_str]['quantity'] += 1
+    else:
+        cart[product_id_str] = {
+            'quantity': 1,
+            'price': str(product.price),
+        }
+
+    return cart

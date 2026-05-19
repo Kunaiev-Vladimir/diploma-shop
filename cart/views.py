@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from shop.models import Product
 from django.http import JsonResponse
 from .services import get_cart_items
+from .services import get_cart_items, add_product_to_cart
 
 # Create your views here.
 
@@ -98,15 +99,17 @@ def cart_add(request, product_id):
 
     cart = request.session.get('cart', {})
 
-    product_id_str = str(product.id)
+    # product_id_str = str(product.id)
 
-    if product_id_str in cart:
-        cart[product_id_str]['quantity'] += 1
-    else:
-        cart[product_id_str] = {
-            'quantity': 1,
-            'price': str(product.price),
-        }
+    # if product_id_str in cart:
+    #     cart[product_id_str]['quantity'] += 1
+    # else:
+    #     cart[product_id_str] = {
+    #         'quantity': 1,
+    #         'price': str(product.price),
+    #     }
+
+    cart = add_product_to_cart(cart, product)
 
     request.session['cart'] = cart
     request.session.modified = True
